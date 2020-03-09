@@ -2,7 +2,7 @@
   <section class="col" id="intro">
     <navbar></navbar>
     <header class="col">
-      <h1>Jakość, która <br /><strong>zaprocentuje.</strong></h1>
+      <h1>Jakość, która<br /><strong>zaprocentuje.</strong></h1>
     </header>
     <house></house>
   </section>
@@ -28,16 +28,21 @@ section {
   padding: 100px 0 200px 0;
   justify-content: space-between;
   background: linear-gradient(111deg, #042640, #084c80, #128be6);
+  font-family: 'futura-pt', sans-serif;
+  // font-family: 'Poppins', sans-serif;
 }
 header {
   margin: 0 300px;
 }
 strong {
-  font-size: 5.5vw;
+  // font-size: 5.5vw;
+  font-size: 105px;
 }
 h1 {
-  font-size: 3vw;
+  // font-size: 3vw;
+  font-size: 74px;
   line-height: 74px;
+  font-weight: 700;
   letter-spacing: -0.46px;
 }
 </style>
