@@ -1,5 +1,5 @@
 <template>
-  <div class="col" id="dostawa">
+  <section class="row" id="dostawa">
     <Card
       v-for="(card, index) in cards"
       :key="index"
@@ -10,7 +10,7 @@
       :margin="card.margin"
       :outside="card.outside"
     ></Card>
-  </div>
+  </section>
 </template>
 
 <script>
