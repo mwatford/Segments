@@ -1,67 +1,94 @@
 <template>
-  <div class="home col">
-    <div class="row">
-      <Card
-        v-for="(card, index) in cards"
-        :key="index"
-        :type="index % 2 === 0 ? 'gray' : 'lightGray'"
-        :content="card"
-        :number="index + 1"
-        :extra="card.extra"
-        :margin="card.margin"
-        :outside="card.outside"
-      ></Card>
-    </div>
+  <div class="home col" name="home">
+    <intro></intro>
+    <navbar
+      :sticky="true"
+      :style="{ visibility: showNav ? 'visible' : 'hidden' }"
+      :active="active"
+    ></navbar>
+    <info></info>
+    <delivery></delivery>
   </div>
 </template>
 
 <script>
-import Card from "../components/Card.vue";
+import header from "../components/header.vue";
+import navbar from "../components/navbar.vue";
+import intro from "./Intro.vue";
+import info from "./Info.vue";
+import delivery from "./Delivery.vue";
 
 export default {
   components: {
-    Card
+    "common-header": header,
+    intro,
+    navbar,
+    info,
+    delivery
   },
   data() {
     return {
-      cards: [
-        { header: "zamówienie", text: "Zamawiasz towar.", margin: true },
-        {
-          margin: true,
-          extra: true,
-          header: "producent",
-          text:
-            "Sklep zamawia towar w hurtowni, hurtownia zamawia towar u producenta."
-        },
-        {
-          outside: true,
-          extra: !true,
-          margin: false,
-          header: "hurtownia",
-          text: `Materiały trafiaja do hurtowni, skąd wysyłane są do składu budowlanego.
-          Dodatkowy koszt pracowników, magazynowania i transportu.`
-        },
-        {
-          extra: true,
-          margin: false,
-          header: "skład budowlany",
-          text: `Dopiero tutaj produkty z Twojego zamównienia są kompletowany.
-          Kolejny raz pokrywane są koszty pracowników transporu i magazynowania.`
-        },
-        {
-          margin: true,
-          header: "klient",
-          text: `Zakupy są u Ciebie.`
-        }
-      ]
+      scrollPos: "",
+      introHeight: "",
+      positions: undefined
     };
+  },
+  computed: {
+    showNav() {
+      return this.scrollPos > this.introHeight;
+    },
+    active() {
+      if (this.positions) {
+        for (let el in this.positions) {
+          if (
+            this.scrollPos >= this.positions[el][0] &&
+            this.scrollPos <= this.positions[el][1]
+          ) {
+            return el;
+          }
+        }
+      }
+    }
+  },
+  methods: {
+    setScrollPos() {
+      this.scrollPos = Math.ceil(window.scrollY);
+    },
+    setIntroHeight() {
+      this.introHeight = document.getElementById("intro").clientHeight;
+    },
+    getElementList() {
+      let arr = Array.from(document.getElementsByName("home")[0].children);
+      arr = arr.filter(el => el.id !== "");
+
+      const reduced = arr.reduce((acc, current) => {
+        acc[current.id] = [
+          current.offsetTop,
+          current.clientHeight + current.offsetTop - 1
+        ];
+        return acc;
+      }, {});
+      this.positions = reduced;
+    }
+  },
+  mounted() {
+    this.getElementList();
+    window.addEventListener("resize", () => {
+      this.setIntroHeight();
+      this.getElementList();
+    });
+    this.setIntroHeight();
+    document.addEventListener("scroll", this.setScrollPos);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.row {
-  margin-top: 50px;
-  width: 90%;
+.home {
+  width: 100%;
+}
+.asd {
+  position: fixed;
+  top: 200px;
 }
 </style>
