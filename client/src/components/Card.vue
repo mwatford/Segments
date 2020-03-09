@@ -1,19 +1,32 @@
 <template>
-  <div class="card col">
-    <div :class="`card__border card__border--${type}`"></div>
-    <h2 :class="'card__number'">{{ number }}</h2>
-    <h4 :class="`card__header card__header--${type}`">{{ content.header }}</h4>
+  <div class="asd col">
+    <div :class="`card card--${type} col`">
+      <div class="card__border"></div>
+      <h2 class="card__number">{{ number }}</h2>
+      <h4 class="card__header">{{ content.header }}</h4>
+      <p
+        v-if="!outside"
+        :class="[
+          'card__text',
+          { 'card__text--extra': extra },
+          { 'card__text--no-margin': !margin }
+        ]"
+      >
+        {{ content.text }}
+      </p>
+      <div class="card__icon">#</div>
+    </div>
     <p
+      v-if="outside"
       :class="[
         'card__text',
+        'card__text--outside',
         { 'card__text--extra': extra },
-        { 'card__text--no-margin': !margin },
-        { 'card__text--outside': outside }
+        { 'card__text--no-margin': !margin }
       ]"
     >
       {{ content.text }}
     </p>
-    <div :class="`card__icon card__icon--${type}`">#</div>
   </div>
 </template>
 
@@ -24,35 +37,37 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-@mixin borderColor($type) {
-  border-color: var($type);
+@mixin card($type) {
+  .card {
+    &__border {
+      border-color: var($type);
 
-  &::before,
-  &::after {
-    border-color: var($type);
+      &::before,
+      &::after {
+        border-color: var($type);
+      }
+    }
+
+    &__icon {
+      border-color: var($type);
+    }
+
+    &__header {
+      background-color: var($type);
+    }
   }
-}
-@mixin backgroundColor($type) {
-  background-color: var($type);
 }
 
 .card {
   background: transparent;
-  width: 250px;
+  width: 100%;
   min-height: 200px;
   height: 100%;
   display: flex;
-  color: #fff;
   position: relative;
-  margin-left: 20px;
+  margin: 20px;
   font-size: 16px;
-
-  // margin-top: 20px;
+  z-index: 1;
 
   &__border {
     position: absolute;
@@ -85,22 +100,6 @@ export default {
       right: 0;
       transform: translate(calc(100% - 1px), calc(-50% + 2px));
     }
-
-    &--pink {
-      @include borderColor(--pink);
-    }
-    &--yellow {
-      @include borderColor(--yellow);
-    }
-    &--blue {
-      @include borderColor(--blue);
-    }
-    &--gray {
-      @include borderColor(--gray);
-    }
-    &--lightGray {
-      @include borderColor(--lightGray);
-    }
   }
 
   &__number {
@@ -117,28 +116,13 @@ export default {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-
-    &--pink {
-      @include backgroundColor(--pink);
-    }
-    &--yellow {
-      @include backgroundColor(--yellow);
-    }
-    &--blue {
-      @include backgroundColor(--blue);
-    }
-    &--gray {
-      @include backgroundColor(--gray);
-    }
-    &--lightGray {
-      @include backgroundColor(--lightGray);
-    }
   }
 
   &__text {
     margin: 80px auto;
     width: 95%;
     text-align: center;
+    word-wrap: break-word;
 
     &--extra {
       padding-top: 30px;
@@ -147,10 +131,7 @@ export default {
       margin: 0 auto 80px auto;
     }
     &--outside {
-      position: absolute;
-      top: 100%;
-      // margin-top: 100px;
-      margin-top: 80px;
+      margin-top: 40px;
     }
   }
 
@@ -166,22 +147,29 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &--pink {
-      border-color: var(--pink);
-    }
-    &--yellow {
-      border-color: var(--yellow);
-    }
-    &--blue {
-      border-color: var(--blue);
-    }
-    &--gray {
-      border-color: var(--gray);
-    }
-    &--lightGray {
-      border-color: var(--lightGray);
-    }
   }
+
+  &--gray {
+    @include card(--gray);
+  }
+  &--lightGray {
+    @include card(--lightGray);
+  }
+  &--pink {
+    @include card(--pink);
+  }
+  &--blue {
+    @include card(--blue);
+  }
+  &--yellow {
+    @include card(--yellow);
+  }
+}
+.asd {
+  height: 100%;
+  width: 300px;
+  padding: 40px 20px;
+  color: #fff;
+  align-items: center;
 }
 </style>
