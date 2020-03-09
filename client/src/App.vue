@@ -15,7 +15,8 @@ export default {};
   box-sizing: border-box;
 }
 body {
-  background-color: #06406c;
+  background-color: #fff;
+  scroll-behavior: smooth;
 }
 :root {
   --pink: #ef529d;
