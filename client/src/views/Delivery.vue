@@ -60,6 +60,6 @@ export default {
 <style lang="scss" scoped>
 #dostawa {
   padding: 40px 20px;
-  background: #000;
+  background: linear-gradient(180deg,#042640, #084c80, #128be6);
 }
 </style>
