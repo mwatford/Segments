@@ -29,7 +29,6 @@ export default {};
 }
 .house {
   width: 90%;
-  padding: 0;
 }
 @keyframes animation {
   to {
