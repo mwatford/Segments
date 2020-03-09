@@ -77,8 +77,11 @@ export default {
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 24px;
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
     overflow: hidden;
+    letter-spacing: 0;
 
     &--active {
       text-decoration: underline;
