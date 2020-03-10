@@ -71,9 +71,8 @@ export default {
 
 <style lang="scss" scoped>
 #dostawa {
-  padding: 40px 20px;
+  padding: 40px 20px 0 20px;
   background: #fff;
-  padding-top: 100px;
 }
 header {
   width: 40%;
@@ -84,6 +83,7 @@ header {
     font-size: 80px;
     font-weight: 700;
     letter-spacing: 0;
+    color: var(--header);
   }
   p {
     font-family: museo-slab;
