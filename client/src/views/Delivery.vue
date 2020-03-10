@@ -1,5 +1,6 @@
 <template>
   <section class="row" id="dostawa">
+    <div class=""></div>
     <header>
       <h1>Dostawa.</h1>
       <p>
@@ -71,11 +72,13 @@ export default {
 
 <style lang="scss" scoped>
 #dostawa {
-  padding: 40px 20px 0 20px;
+  padding-top: 40px;
   background: #fff;
 }
 header {
-  width: 40%;
+  width: 100%;
+  max-width: 930px;
+  margin-left: 300px;
 
   h1 {
     margin-bottom: 40px;
