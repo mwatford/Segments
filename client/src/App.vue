@@ -24,6 +24,7 @@ body {
   --blue: #58c6d5;
   --gray: #707070;
   --lightGray: #a5a5a5;
+  --header: #231F20;
 }
 .row {
   display: flex;
