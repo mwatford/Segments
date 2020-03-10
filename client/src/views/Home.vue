@@ -8,6 +8,8 @@
     ></navbar>
     <info></info>
     <delivery></delivery>
+    <Products></Products>
+    <Contact></Contact>
   </div>
 </template>
 
@@ -17,6 +19,8 @@ import navbar from "../components/navbar.vue";
 import intro from "./Intro.vue";
 import info from "./Info.vue";
 import delivery from "./Delivery.vue";
+import Products from "./Products.vue";
+import Contact from "./Contact.vue";
 
 export default {
   components: {
@@ -24,7 +28,9 @@ export default {
     intro,
     navbar,
     info,
-    delivery
+    delivery,
+    Products,
+    Contact
   },
   data() {
     return {
