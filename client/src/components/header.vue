@@ -1,21 +1,39 @@
 <template>
-  <header class="header col">
-    <h1>{{ main || "asdasdasdasd" }}</h1>
-    <h3>{{ subheader || "asdasdas" }}</h3>
+  <header :class="['col', 'commonHeader', { 'commonHeader--large': large }]">
+    <div>
+      <h1>{{ main || "asdasdasdasd" }}</h1>
+      <h3>{{ subheader || "asdasdas" }}</h3>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
-  props: ["main", "subheader"]
+  props: {
+    main: {
+      type: String
+    },
+    subheader: {
+      type: String
+    },
+    large: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.header {
-  align-items: flex-end;
+.commonHeader {
   font-size: 39px;
+  text-align: right;
   color: #fff;
+  align-items: flex-start;
+  padding-left: 280px;
+  font-family: futura-pt, sans-serif;
+  user-select: none;
 
   &--large {
     font-size: 52.5px;
