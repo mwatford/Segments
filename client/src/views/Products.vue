@@ -1,6 +1,8 @@
 <template>
   <section id="produkty" class="col">
-    <h1>Nasze produkty.</h1>
+    <header>
+      <h1>Nasze produkty.</h1>
+    </header>
     <ul>
       <li v-for="(item, index) in products" :key="index">
         <product :item="item"></product>
@@ -34,9 +36,9 @@ h1 {
   font-family: futura-pt, sans-serif;
   margin: auto;
   font-size: 80px;
-  margin-bottom: 100px;
   font-weight: 700;
   color: var(--header);
+  margin-bottom: 100px;
 }
 ul {
   @media (max-width: 1000px) {
@@ -52,6 +54,5 @@ ul {
   li {
     min-width: 446px;
   }
-
 }
 </style>
