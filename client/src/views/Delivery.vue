@@ -1,6 +1,10 @@
 <template>
   <section class="col" id="dostawa">
-    <div class=""></div>
+    <div class="background-1">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <header class="header">
       <h1>Dostawa.</h1>
       <p>
@@ -53,7 +57,7 @@
       <h1 class="wrap-up">Wybór jest prosty.</h1>
     </div>
 
-    <div class="background">
+    <div class="background-2">
       <div></div>
       <div></div>
       <div></div>
@@ -131,10 +135,11 @@ export default {
 
 <style lang="scss" scoped>
 #dostawa {
-  padding-top: 40px;
+  padding-top: 130px;
   background: #fff;
   font-family: futura-pt;
   position: relative;
+  z-index: 1;
 
   picture {
     align-self: flex-end;
@@ -156,7 +161,7 @@ export default {
 }
 .info {
   align-items: center;
-  transform: translateY(-90px);
+  transform: translateY(-40px);
   background: linear-gradient(180deg, #042640, #084c80, #128be6);
 
   header {
@@ -178,7 +183,24 @@ export default {
   font-size: 113px;
   align-self: flex-start;
 }
-.background {
+.background-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 400px 0 360px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  z-index: -1;
+
+  div {
+    background: #f1f9ff;
+    height: 290px;
+    width: 100%;
+    margin-bottom: 145px;
+  }
+}
+.background-2 {
   position: absolute;
   bottom: 190px;
   width: 100%;
