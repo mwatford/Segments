@@ -183,37 +183,4 @@ export default {
   font-size: 113px;
   align-self: flex-start;
 }
-.background-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0 400px 0 360px;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  z-index: -1;
-
-  div {
-    background: #f1f9ff;
-    height: 290px;
-    width: 100%;
-    margin-bottom: 145px;
-  }
-}
-.background-2 {
-  position: absolute;
-  bottom: 190px;
-  width: 100%;
-  padding: 0 380px;
-  display: flex;
-  justify-content: space-between;
-  opacity: 0.1;
-  z-index: 0;
-
-  & div {
-    background: #ffffff;
-    width: 290px;
-    height: 850px;
-  }
-}
 </style>
