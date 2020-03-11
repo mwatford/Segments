@@ -90,7 +90,7 @@ export default {
 
   &--sticky {
     margin: 0;
-    position: sticky;
+    position: fixed;
     background: #095590a1;
     top: 0;
 
