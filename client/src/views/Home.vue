@@ -3,9 +3,15 @@
     <intro></intro>
     <navbar
       :sticky="true"
-      :style="{ visibility: showNav ? 'visible' : 'hidden' }"
+      :style="{
+        visibility: showNav || active === 'o_nas' ? 'visible' : 'hidden'
+      }"
       :active="active"
     ></navbar>
+    <!-- <div class="asd" v-if="false">
+      <p v-for="(item, name, index) in positions">{{ name }}:{{ item }}</p>
+      <p>{{ scrollPos }}</p>
+    </div> -->
     <info></info>
     <delivery></delivery>
     <Products></Products>
@@ -78,13 +84,13 @@ export default {
     }
   },
   mounted() {
-    this.getElementList();
-    window.addEventListener("resize", () => {
-      this.setIntroHeight();
-      this.getElementList();
-    });
     this.setIntroHeight();
+    this.getElementList();
     document.addEventListener("scroll", this.setScrollPos);
+  },
+  beforeUpdate() {
+    this.setIntroHeight();
+    this.getElementList();
   }
 };
 </script>
@@ -96,5 +102,9 @@ export default {
 .asd {
   position: fixed;
   top: 200px;
+  color: #000;
+  z-index: 5;
+  background: #fff;
+  height: auto;
 }
 </style>
