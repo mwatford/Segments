@@ -28,8 +28,8 @@ section {
   padding: 100px 0 200px 0;
   justify-content: space-between;
   background: linear-gradient(111deg, #042640, #084c80, #128be6);
-  font-family: 'futura-pt', sans-serif;
-  // font-family: 'Poppins', sans-serif;
+  font-family: "futura-pt", sans-serif;
+  box-shadow: -2px 25px 31px #00000029;
 }
 header {
   margin: 0 300px;
