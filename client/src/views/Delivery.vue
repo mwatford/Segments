@@ -1,7 +1,7 @@
 <template>
-  <section class="row" id="dostawa">
+  <section class="col" id="dostawa">
     <div class=""></div>
-    <header>
+    <header class="header">
       <h1>Dostawa.</h1>
       <p>
         Bądź świadomy swojej odpowiedzialności ekologicznej za produkty które
@@ -12,29 +12,88 @@
         bezpośrednio od nich.
       </p>
     </header>
+    <picture>
+      <img src="/assets/delivery.png" alt="" />
+    </picture>
+    <div class="info col">
+      <common-header
+        main="Jak to wygląda"
+        subheader="u innych?"
+      ></common-header>
+      <div class="info-1 row">
+        <Card
+          v-for="(card, index) in cards"
+          :key="index"
+          :type="index % 2 === 0 ? 'gray' : 'lightGray'"
+          :content="card"
+          :number="index + 1"
+          :extra="card.extra"
+          :margin="card.margin"
+          :outside="card.outside"
+        ></Card>
+      </div>
+      <common-header
+        main="Jak to wygląda"
+        subheader="u nas?"
+        :large="true"
+      ></common-header>
+      <div class="row info-2">
+        <Card
+          v-for="(card, index) in asd"
+          :key="index"
+          :type="card.type"
+          :content="card"
+          :number="index + 1"
+          :extra="card.extra"
+          :margin="card.margin"
+          :outside="card.outside"
+          :large="true"
+        ></Card>
+      </div>
+      <h1 class="wrap-up">Wybór jest prosty.</h1>
+    </div>
 
-    <!-- <Card
-      v-for="(card, index) in cards"
-      :key="index"
-      :type="index % 2 === 0 ? 'gray' : 'lightGray'"
-      :content="card"
-      :number="index + 1"
-      :extra="card.extra"
-      :margin="card.margin"
-      :outside="card.outside"
-    ></Card> -->
+    <div class="background">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </section>
 </template>
 
 <script>
 import Card from "../components/Card.vue";
+import header from "../components/header.vue";
 
 export default {
   components: {
-    Card
+    Card,
+    "common-header": header
   },
   data() {
     return {
+      asd: [
+        {
+          header: "zamówienie",
+          text: "Zamawiasz towar u nas, a my kontaktujemy się z producentem.",
+          margin: true,
+          type: "yellow"
+        },
+        {
+          header: "wysyłka",
+          text:
+            "Towar jest pakowany i wysyłany bezpośrednio od producenta w ciągu 2 dni roboczych.",
+          type: "pink",
+          margin: true,
+          extra: true
+        },
+        {
+          header: "klient",
+          text: "Zakupy są u Ciebie.",
+          type: "blue",
+          margin: true
+        }
+      ],
       cards: [
         { header: "zamówienie", text: "Zamawiasz towar.", margin: true },
         {
@@ -74,27 +133,65 @@ export default {
 #dostawa {
   padding-top: 40px;
   background: #fff;
-}
-header {
-  width: 100%;
-  max-width: 930px;
-  margin-left: 300px;
+  font-family: futura-pt;
+  position: relative;
 
-  h1 {
-    margin-bottom: 40px;
-    font-family: futura-pt;
-    font-size: 80px;
-    font-weight: 700;
-    letter-spacing: 0;
-    color: var(--header);
+  picture {
+    align-self: flex-end;
+    margin: 115px 115px 0 0;
+    z-index: 1;
   }
-  p {
-    font-family: museo-slab;
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: 0;
-    font-weight: 300;
+
+  picture:nth-child(3) {
+    width: 755px;
+    height: 505px;
+    box-shadow: -12px 13px 19px #00000029;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
-// background: linear-gradient(180deg, #042640, #084c80, #128be6);
+.info {
+  align-items: center;
+  transform: translateY(-90px);
+  background: linear-gradient(180deg, #042640, #084c80, #128be6);
+
+  header {
+    margin: 145px 0 135px 0;
+    align-self: flex-start;
+  }
+}
+.info-1 {
+  margin: 0 auto;
+}
+.info-2 {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.wrap-up {
+  color: #fff;
+  margin: 450px 0 450px 280px;
+  font-size: 113px;
+  align-self: flex-start;
+}
+.background {
+  position: absolute;
+  bottom: 190px;
+  width: 100%;
+  padding: 0 380px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.1;
+  z-index: 0;
+
+  & div {
+    background: #ffffff;
+    width: 290px;
+    height: 850px;
+  }
+}
 </style>
