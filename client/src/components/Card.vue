@@ -1,6 +1,6 @@
 <template>
-  <div class="asd col">
-    <div :class="`card card--${type} col`">
+  <div :class="['card-outer-box', 'col', { 'card-outer-box--large': large }]">
+    <div :class="[`card card--${type} col`]">
       <div class="card__border"></div>
       <h2 class="card__number">{{ number }}</h2>
       <h4 class="card__header">{{ content.header }}</h4>
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  props: ["type", "content", "number", "extra", "margin", "outside"]
+  props: ["type", "content", "number", "extra", "margin", "outside", "large"]
 };
 </script>
 
@@ -57,6 +57,44 @@ export default {
     }
   }
 }
+@mixin large() {
+  width: 400px;
+  margin-bottom: 40px;
+
+  .card {
+    &__border {
+      border-width: 6px;
+      width: 60px;
+      border-bottom-left-radius: 18px;
+
+      &::before,
+      &::after {
+        border-width: 6px;
+      }
+
+      &::before {
+        transform: translate(calc(-50% - 3px), 1px);
+      }
+    }
+
+    &__header {
+      height: 70px;
+      font-size: 24px;
+    }
+
+    &__text {
+      &--extra {
+        padding: 60px 0;
+      }
+    }
+
+    &__icon {
+      border-width: 6px;
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
 
 .card {
   background: transparent;
@@ -65,9 +103,9 @@ export default {
   height: 100%;
   display: flex;
   position: relative;
-  margin: 20px;
   font-size: 16px;
   z-index: 1;
+  font-family: futura-pt, sans-serif;
 
   &__border {
     position: absolute;
@@ -84,8 +122,8 @@ export default {
     &::after {
       content: "";
       display: flex;
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border: 4px solid;
       border-radius: 50%;
       position: absolute;
@@ -106,6 +144,7 @@ export default {
     position: absolute;
     bottom: 100%;
     left: 10px;
+    font-size: 30px;
   }
 
   &__header {
@@ -120,18 +159,22 @@ export default {
 
   &__text {
     margin: 80px auto;
-    width: 95%;
+    width: 90%;
+    max-width: 280px;
     text-align: center;
     word-wrap: break-word;
+    font-family: museo-slab;
+    font-size: 20px;
+    font-weight: 300;
 
     &--extra {
-      padding-top: 30px;
+      padding: 30px 0;
     }
     &--no-margin {
       margin: 0 auto 80px auto;
     }
     &--outside {
-      margin-top: 40px;
+      margin-top: 60px;
     }
   }
 
@@ -140,8 +183,8 @@ export default {
     top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
     border: 4px solid;
     border-radius: 50%;
     display: flex;
@@ -165,11 +208,18 @@ export default {
     @include card(--yellow);
   }
 }
-.asd {
+.card-outer-box {
   height: 100%;
   width: 300px;
-  padding: 40px 20px;
+  padding: 40px 6px;
   color: #fff;
   align-items: center;
+  user-select: none;
+
+  &--large {
+    @media (min-width: 420px) {
+      @include large;
+    }
+  }
 }
 </style>
