@@ -14,7 +14,10 @@
       >
         {{ content.text }}
       </p>
-      <div class="card__icon">#</div>
+      <div :class="['card__icon', { 'card__icon--client': icon === 'client' }]">
+        <img :src="`/assets/${icon}.svg`" alt="" v-if="icon !== 'text'" />
+        <h3 v-else>SKLEP BUDOWLANY</h3>
+      </div>
     </div>
     <p
       v-if="outside"
@@ -32,7 +35,16 @@
 
 <script>
 export default {
-  props: ["type", "content", "number", "extra", "margin", "outside", "large"]
+  props: [
+    "icon",
+    "type",
+    "content",
+    "number",
+    "extra",
+    "margin",
+    "outside",
+    "large"
+  ]
 };
 </script>
 
@@ -77,14 +89,19 @@ export default {
       }
     }
 
+    &__number {
+      font-size: 35px;
+    }
+
     &__header {
       height: 70px;
       font-size: 24px;
     }
 
     &__text {
+      margin-bottom: 100px;
       &--extra {
-        padding: 60px 0;
+        margin-top: 120px;
       }
     }
 
@@ -144,7 +161,8 @@ export default {
     position: absolute;
     bottom: 100%;
     left: 10px;
-    font-size: 30px;
+    font-size: 42px;
+    margin-left: 5px;
   }
 
   &__header {
@@ -159,8 +177,8 @@ export default {
 
   &__text {
     margin: 80px auto;
-    width: 90%;
-    max-width: 280px;
+    width: 100%;
+    max-width: 267px;
     text-align: center;
     word-wrap: break-word;
     font-family: museo-slab;
@@ -174,7 +192,7 @@ export default {
       margin: 0 auto 80px auto;
     }
     &--outside {
-      margin-top: 60px;
+      margin-top: 80px;
     }
   }
 
@@ -190,6 +208,13 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    font-size: 13px;
+    padding: 15px;
+
+    &--client {
+      padding: 30px;
+    }
   }
 
   &--gray {

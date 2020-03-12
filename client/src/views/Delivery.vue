@@ -34,6 +34,7 @@
           :extra="card.extra"
           :margin="card.margin"
           :outside="card.outside"
+          :icon="card.icon"
         ></Card>
       </div>
       <common-header
@@ -52,6 +53,7 @@
           :margin="card.margin"
           :outside="card.outside"
           :large="true"
+          :icon="card.icon"
         ></Card>
       </div>
       <h1 class="wrap-up">Wybór jest prosty.</h1>
@@ -80,7 +82,8 @@ export default {
           header: "zamówienie",
           text: "Zamawiasz towar u nas, a my kontaktujemy się z producentem.",
           margin: true,
-          type: "yellow"
+          type: "yellow",
+          icon: "logo"
         },
         {
           header: "wysyłka",
@@ -88,21 +91,29 @@ export default {
             "Towar jest pakowany i wysyłany bezpośrednio od producenta w ciągu 2 dni roboczych.",
           type: "pink",
           margin: true,
+          icon: "truck-2",
           extra: true
         },
         {
           header: "klient",
           text: "Zakupy są u Ciebie.",
           type: "blue",
+          icon: "client",
           margin: true
         }
       ],
       cards: [
-        { header: "zamówienie", text: "Zamawiasz towar.", margin: true },
+        {
+          header: "zamówienie",
+          text: "Zamawiasz towar.",
+          icon: "text",
+          margin: true
+        },
         {
           margin: true,
           extra: true,
           header: "producent",
+          icon: "truck-1",
           text:
             "Sklep zamawia towar w hurtowni, hurtownia zamawia towar u producenta."
         },
@@ -110,6 +121,7 @@ export default {
           outside: true,
           extra: !true,
           margin: false,
+          icon: "truck-1",
           header: "hurtownia",
           text: `Materiały trafiaja do hurtowni, skąd wysyłane są do składu budowlanego.
           Dodatkowy koszt pracowników, magazynowania i transportu.`
@@ -117,12 +129,14 @@ export default {
         {
           extra: true,
           margin: false,
+          icon: "truck-1",
           header: "skład budowlany",
           text: `Dopiero tutaj produkty z Twojego zamównienia są kompletowany.
           Kolejny raz pokrywane są koszty pracowników transporu i magazynowania.`
         },
         {
           margin: true,
+          icon: "client",
           header: "klient",
           text: `Zakupy są u Ciebie.`
         }
