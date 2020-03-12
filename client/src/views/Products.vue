@@ -53,6 +53,7 @@ ul {
 
   li {
     min-width: 446px;
+    margin: 0 10px;
   }
 }
 </style>

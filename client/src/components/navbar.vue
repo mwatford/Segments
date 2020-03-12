@@ -96,7 +96,8 @@ export default {
 
     .nav {
       &__logo {
-        height: 30px;
+        margin: 10px 0;
+        height: 20px;
       }
       &__link {
         font-size: 15px;

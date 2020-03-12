@@ -8,14 +8,11 @@
       }"
       :active="active"
     ></navbar>
-    <!-- <div class="asd" v-if="false">
-      <p v-for="(item, name, index) in positions">{{ name }}:{{ item }}</p>
-      <p>{{ scrollPos }}</p>
-    </div> -->
     <info></info>
     <delivery></delivery>
     <Products></Products>
     <Contact></Contact>
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -27,6 +24,7 @@ import info from "./Info.vue";
 import delivery from "./Delivery.vue";
 import Products from "./Products.vue";
 import Contact from "./Contact.vue";
+import Footer from '../components/Footer.vue'
 
 export default {
   components: {
@@ -36,7 +34,8 @@ export default {
     info,
     delivery,
     Products,
-    Contact
+    Contact,
+    "app-footer": Footer
   },
   data() {
     return {
@@ -98,13 +97,6 @@ export default {
 <style lang="scss" scoped>
 .home {
   width: 100%;
-}
-.asd {
-  position: fixed;
-  top: 200px;
-  color: #000;
-  z-index: 5;
-  background: #fff;
-  height: auto;
+  scroll-behavior: smooth;
 }
 </style>

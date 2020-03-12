@@ -55,11 +55,11 @@ export default {
 
   header {
     font-family: futura-pt, sans-serif;
+    margin-bottom: 25px;
   }
 }
 .content {
-  padding: 0 280px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-end;
   transform: translateY(-80px);
 }
@@ -67,9 +67,16 @@ export default {
   align-items: center;
   width: 50%;
 
+  &:nth-of-type(1) {
+    margin-left: 200px;
+  }
+  &:nth-of-type(2) {
+    margin-right: 260px;
+  }
+
   h3 {
     font-family: museo-slab, sans-serif;
-    font-size: 24;
+    font-size: 24px;
     line-height: 32px;
     font-weight: 500;
   }
@@ -88,10 +95,5 @@ export default {
 }
 .background-1 {
   padding: 0 470px 0 435px;
-  // padding: 0 470px 0 435px;
-  // div:nth-child(3) {
-  //   margin-bottom: 0;
-  //   height: 125px;
-  // }
 }
 </style>

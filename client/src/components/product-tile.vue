@@ -25,7 +25,7 @@ export default {
   font-family: futura-pt;
   cursor: pointer;
   padding: 24px 0 31px 0;
-  margin: 0 10px 20px 10px;
+  margin-bottom: 20px;
 
   &__image {
     width: 379px;
