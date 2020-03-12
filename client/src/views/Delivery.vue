@@ -56,7 +56,6 @@
       </div>
       <h1 class="wrap-up">Wybór jest prosty.</h1>
     </div>
-
     <div class="background-2">
       <div></div>
       <div></div>
@@ -137,7 +136,7 @@ export default {
 #dostawa {
   padding-top: 130px;
   background: #fff;
-  font-family: futura-pt;
+  font-family: futura-pt, sans-serif;
   position: relative;
   z-index: 1;
 
