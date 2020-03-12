@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  padding-top: 40px;
+  padding: 40px 0;
   align-items: center;
 }
 h1 {
