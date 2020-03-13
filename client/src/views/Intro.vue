@@ -22,11 +22,14 @@ export default {
 
 <style lang="scss" scoped>
 section {
+  @media (max-width: 1000px) {
+    padding: 50px 0 100px 0;
+  }
   color: #fff;
   height: 100vh;
   min-height: 600px;
   user-select: none;
-  padding: 100px 0;
+  padding: 100px 0 200px 0;
   justify-content: space-between;
   background: linear-gradient(111deg, #042640, #084c80, #128be6);
   font-family: "futura-pt", sans-serif;
