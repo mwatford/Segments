@@ -4,25 +4,47 @@
       <h1>Nasze produkty.</h1>
     </header>
     <ul>
-      <li v-for="(item, index) in products" :key="index">
+      <li
+        v-for="(item, index) in products"
+        :key="index"
+        @click="openItem(item)"
+      >
         <product :item="item"></product>
       </li>
     </ul>
+    <popup v-if="active" :data="active"></popup>
   </section>
 </template>
 
 <script>
 import product from "../components/product-tile.vue";
 import products from "../products";
+import popup from "../components/popup.vue";
 
 export default {
   components: {
-    product
+    product,
+    popup
   },
   data() {
     return {
-      products
+      products,
+      active: null
     };
+  },
+  methods: {
+    openItem(product) {
+      this.active = product;
+    },
+    closeItem() {
+      this.active = null;
+    }
+  },
+  mounted() {
+    this.$eventBus.$on("closeItem", this.closeItem);
+    document.addEventListener("keydown", ev => {
+      if (ev.keyCode === 27) this.closeItem();
+    });
   }
 };
 </script>
@@ -31,9 +53,9 @@ export default {
 section {
   padding: 40px 0;
   align-items: center;
+  font-family: futura-pt, sans-serif;
 }
 h1 {
-  font-family: futura-pt, sans-serif;
   margin: auto;
   font-size: 80px;
   font-weight: 700;
@@ -55,5 +77,13 @@ ul {
     min-width: 446px;
     margin: 0 10px;
   }
+}
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.3s;
+}
+.scale-leave-to,
+.scale-enter {
+  opacity: 0;
 }
 </style>
