@@ -23,7 +23,7 @@ export default {};
   fill: none;
   stroke: #fff;
   stroke-linecap: square;
-  stroke-miterlimit: 10;
+  stroke-miterlimit: 5;
   stroke-width: 3.5px;
   animation: animation 3s cubic-bezier(.48,.77,0,1) forwards;
 }
