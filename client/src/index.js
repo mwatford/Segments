@@ -5,6 +5,8 @@ import store from "./store/index";
 
 Vue.config.productionTip = false;
 
+Vue.prototype.$eventBus = new Vue();
+
 new Vue({
   store,
   router,
