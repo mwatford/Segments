@@ -23,25 +23,37 @@ export default {
 <style lang="scss" scoped>
 section {
   color: #fff;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 600px;
   user-select: none;
-  padding: 100px 0 200px 0;
+  padding: 100px 0;
   justify-content: space-between;
   background: linear-gradient(111deg, #042640, #084c80, #128be6);
   font-family: "futura-pt", sans-serif;
   box-shadow: -2px 25px 31px #00000029;
 }
 header {
+  @media (max-width: 1400px) {
+    margin: 8%;
+  }
   margin: 0 300px;
 }
 strong {
-  // font-size: 5.5vw;
-  font-size: 105px;
+  @media (max-width: 1000px) {
+    font-size: 60px;
+  }
+  @media (max-width: 500px) {
+    font-size: 42px;
+  }
+  font-size: 5.5vw;
 }
 h1 {
-  // font-size: 3vw;
-  font-size: 74px;
-  line-height: 74px;
+  @media (max-width: 1000px) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  font-size: 3vw;
+  line-height: 3vw;
   font-weight: 700;
   letter-spacing: -0.46px;
 }
