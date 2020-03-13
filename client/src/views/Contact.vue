@@ -84,7 +84,13 @@ export default {
   picture {
     z-index: 1;
     margin-bottom: 40px;
-    width: 50%;
+    width: 100%;
+    display: flex;
+
+    & > * {
+      max-width: 400px;
+      margin: auto;
+    }
   }
 
   & .col {
