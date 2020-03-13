@@ -1,6 +1,6 @@
 <template>
   <section class="col" id="dostawa">
-    <div class="background-1">
+    <div class="background-1 parallax">
       <div></div>
       <div></div>
       <div></div>
@@ -58,7 +58,7 @@
       </div>
       <h1 class="wrap-up">Wybór jest prosty.</h1>
     </div>
-    <div class="background-2">
+    <div class="background-2 parallax">
       <div></div>
       <div></div>
       <div></div>
