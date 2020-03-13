@@ -1,6 +1,6 @@
 <template>
   <section class="col" id="o_nas">
-    <div class="row background">
+    <div class="row background parallax">
       <div></div>
       <div></div>
       <div></div>
@@ -22,10 +22,10 @@
         oraz Unii Europejskiej.
       </p>
     </header>
-    <figure class="col">
+    <figure class="col parallax">
       <picture><img src="/assets/o_nas-1.jpg" alt=""/></picture>
     </figure>
-    <figure class="row">
+    <figure class="row parallax">
       <figcaption>
         Projekt deweloperski "Wędrowców" w Bielsku-Białej
       </figcaption>
