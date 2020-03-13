@@ -24,7 +24,7 @@ import info from "./Info.vue";
 import delivery from "./Delivery.vue";
 import Products from "./Products.vue";
 import Contact from "./Contact.vue";
-import Footer from '../components/Footer.vue'
+import Footer from "../components/Footer.vue";
 
 export default {
   components: {
@@ -80,6 +80,30 @@ export default {
         return acc;
       }, {});
       this.positions = reduced;
+    },
+    getAnimableElements() {
+      return Array.from(
+        document.querySelectorAll(`#${this.active} > .parallax`)
+      );
+    },
+    animateElements() {
+      const elements = this.getAnimableElements();
+      const rate = 8;
+
+      const [top, bot] = this.positions[this.active];
+      const height = bot - top;
+      const percent = (this.scrollPos - top) / height;
+
+      for (let el of elements[0].children) {
+        const index = Array.from(elements[0].children)
+          .reverse()
+          .indexOf(el);
+        +1;
+        el.style.transform = `translate3d(0, -${percent *
+          100 *
+          index *
+          rate}px, 0)`;
+      }
     }
   },
   mounted() {
@@ -88,6 +112,7 @@ export default {
     document.addEventListener("scroll", this.setScrollPos);
   },
   beforeUpdate() {
+    // this.animateElements();
     this.setIntroHeight();
     this.getElementList();
   }
