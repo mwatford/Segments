@@ -26,6 +26,7 @@ body {
   user-select: none;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 
   h1 {
     @media (max-width: 750px) {

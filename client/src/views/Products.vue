@@ -12,7 +12,6 @@
         <product :item="item"></product>
       </li>
     </ul>
-    <popup v-if="active" :data="active"></popup>
   </section>
 </template>
 

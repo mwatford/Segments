@@ -212,6 +212,10 @@ export default {
     font-size: 13px;
     padding: 15px;
 
+    img {
+      width: 100%;
+    }
+
     &--client {
       padding: 30px;
     }
