@@ -30,6 +30,7 @@ section {
   min-height: 600px;
   user-select: none;
   padding: 100px 0 200px 0;
+  align-items: flex-start;
   justify-content: space-between;
   background: linear-gradient(111deg, #042640, #084c80, #128be6);
   font-family: "futura-pt", sans-serif;
