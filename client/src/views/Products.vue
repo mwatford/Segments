@@ -1,6 +1,6 @@
 <template>
   <section id="produkty" class="col">
-    <header>
+    <header class="header">
       <h1>Nasze produkty.</h1>
     </header>
     <ul>
@@ -51,32 +51,33 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  padding: 40px 0;
+  @media (max-width: 1400px) {
+    padding-bottom: 10px;
+  }
+  padding: 50px 0 40px 0;
   align-items: center;
   font-family: futura-pt, sans-serif;
 }
-h1 {
+.header {
+  @media (max-width: 1400px) {
+    margin-bottom: 0px;
+  }
   margin: auto;
-  font-size: 80px;
-  font-weight: 700;
-  color: var(--header);
   margin-bottom: 100px;
 }
 ul {
   @media (max-width: 1000px) {
-    width: 100%;
-    justify-content: space-evenly;
+    grid-template-columns: repeat(2, 1fr);
   }
-  display: flex;
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
+  }
   list-style-type: none;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 1398px;
-
-  li {
-    min-width: 446px;
-    margin: 0 10px;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-gap: 20px;
+  margin: 0 8%;
 }
 .scale-enter-active,
 .scale-leave-active {

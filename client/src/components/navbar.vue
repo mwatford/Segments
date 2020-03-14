@@ -52,6 +52,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ul {
+  @media (max-width: 1000px) {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    align-items: flex-end;
+  }
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+
+  a {
+    margin: 5px 0;
+  }
+}
 .nav {
   @media (max-width: 1400px) {
     padding: 0 8%;
@@ -112,6 +129,11 @@ export default {
     top: 0;
     height: 40px;
 
+    & ul {
+      @media (max-width: 1000px) {
+        background: #095590a1;
+      }
+    }
     .nav {
       &__logo {
         margin: 10px 0;
@@ -119,7 +141,9 @@ export default {
       }
       &__link {
         @media (max-width: 1000px) {
-          color: #9ebcd3;
+          color: #fff;
+          margin-right: 5px;
+          margin-bottom: 5px;
         }
         font-size: 15px;
       }
@@ -149,23 +173,7 @@ export default {
     display: flex;
   }
 }
-ul {
-  @media (max-width: 1000px) {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    align-items: flex-end;
-  }
-  list-style-type: none;
-  display: flex;
-  align-items: center;
 
-  a {
-    margin: 5px 0;
-  }
-}
 @keyframes ul {
   0% {
     display: "flex";

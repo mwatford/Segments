@@ -27,6 +27,15 @@ export default {
 
 <style lang="scss" scoped>
 .commonHeader {
+  @media (max-width: 1400px) {
+    padding: 0 8%;
+  }
+  @media (max-width: 750px) {
+    font-size: 24px;
+  }
+  @media (max-width: 500px) {
+    font-size: 18px;
+  }
   font-size: 39px;
   text-align: right;
   color: #fff;
@@ -36,6 +45,12 @@ export default {
   user-select: none;
 
   &--large {
+    @media (max-width: 750px) {
+      font-size: 24px;
+    }
+    @media (max-width: 500px) {
+      font-size: 18px;
+    }
     font-size: 52.5px;
   }
 

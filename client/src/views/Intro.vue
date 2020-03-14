@@ -24,10 +24,14 @@ export default {
 section {
   @media (max-width: 1000px) {
     padding: 50px 0 100px 0;
+    min-height: 700px;
+  }
+  @media (max-width: 500px) {
+    padding: 20px 0 60px 0;
+    min-height: 620px;
   }
   color: #fff;
   height: 100vh;
-  min-height: 600px;
   user-select: none;
   padding: 100px 0 200px 0;
   align-items: flex-start;

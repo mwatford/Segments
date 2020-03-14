@@ -119,7 +119,7 @@ export default {
         },
         {
           outside: true,
-          extra: !true,
+          extra: false,
           margin: false,
           icon: "truck-1",
           header: "hurtownia",
@@ -148,30 +148,36 @@ export default {
 
 <style lang="scss" scoped>
 #dostawa {
+  @media (max-width: 1400px) {
+    padding-top: 50px;
+  }
   padding-top: 130px;
   background: #fff;
   font-family: futura-pt, sans-serif;
   position: relative;
   z-index: 1;
+  width: 100%;
+  min-height: 100vh;
 
   picture {
+    @media (max-width: 1400px) {
+      margin: 54px 8% 0 8%;
+    }
     align-self: flex-end;
     margin: 115px 115px 0 0;
     z-index: 1;
-  }
-
-  picture:nth-child(3) {
-    width: 755px;
-    height: 505px;
-    box-shadow: -12px 13px 19px #00000029;
+    max-width: 755px;
+    max-height: 505px;
 
     img {
+      box-shadow: 7px 10px 16px #00000029;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
 }
+
 .info {
   align-items: center;
   transform: translateY(-40px);
@@ -183,7 +189,9 @@ export default {
   }
 }
 .info-1 {
-  margin: 0 auto;
+  margin: 0 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .info-2 {
   flex-wrap: wrap;
@@ -191,6 +199,16 @@ export default {
   margin-bottom: 40px;
 }
 .wrap-up {
+  @media (max-width: 1400px) {
+    margin: 200px auto;
+    font-size: 80px;
+  }
+  @media (max-width: 1000px) {
+    font-size: 64px;
+  }
+  @media (max-width: 500px) {
+    font-size: 30px;
+  }
   color: #fff;
   margin: 450px 0 450px 280px;
   font-size: 113px;

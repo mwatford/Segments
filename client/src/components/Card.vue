@@ -71,7 +71,7 @@ export default {
 }
 @mixin large() {
   width: 400px;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 
   .card {
     &__border {
@@ -192,7 +192,7 @@ export default {
       margin: 0 auto 80px auto;
     }
     &--outside {
-      margin-top: 80px;
+      margin: 80px auto 0 auto;
     }
   }
 
@@ -236,7 +236,8 @@ export default {
 .card-outer-box {
   height: 100%;
   width: 300px;
-  padding: 40px 6px;
+  padding: 0px 6px;
+  margin: 20px 0 80px 0;
   color: #fff;
   align-items: center;
   user-select: none;

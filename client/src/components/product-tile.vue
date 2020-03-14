@@ -16,26 +16,24 @@ export default {
 
 <style lang="scss" scoped>
 .product {
-  max-width: 446px;
+  min-width: 300px;
   width: 100%;
+  height: 100%;
   background: #095590;
   color: #fff;
   align-items: center;
-  justify-content: space-around;
   font-family: futura-pt;
   cursor: pointer;
-  padding: 24px 0 31px 0;
-  margin-bottom: 20px;
+  padding: 5% 5% 31px 5%;
 
   &__image {
-    width: 379px;
-    height: 309px;
+    width: 100%;
     background: #fff;
 
     & img {
       height: 100%;
       width: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
   }
 

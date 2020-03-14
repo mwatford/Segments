@@ -1,5 +1,5 @@
 <template>
-  <section class="col" id="o_nas">
+  <section class="row" id="o_nas">
     <div class="row background parallax">
       <div></div>
       <div></div>
@@ -22,17 +22,19 @@
         oraz Unii Europejskiej.
       </p>
     </header>
-    <figure class="col parallax">
-      <picture><img src="/assets/o_nas-1.jpg" alt=""/></picture>
-    </figure>
-    <figure class="row parallax">
-      <figcaption>
-        Projekt deweloperski "Wędrowców" w Bielsku-Białej
-      </figcaption>
-      <picture>
-        <img src="/assets/o_nas-2.jpg" alt="" />
-      </picture>
-    </figure>
+    <div class="wrapper col">
+      <figure class="col parallax">
+        <picture><img src="/assets/o_nas-1.jpg" alt=""/></picture>
+      </figure>
+      <figure class="row parallax">
+        <figcaption>
+          Projekt deweloperski "Wędrowców" w Bielsku-Białej
+        </figcaption>
+        <picture>
+          <img src="/assets/o_nas-2.jpg" alt="" />
+        </picture>
+      </figure>
+    </div>
   </section>
 </template>
 
@@ -47,11 +49,18 @@ export default {
 
 <style lang="scss" scoped>
 #o_nas {
-  padding-top: 230px;
+  @media (max-width: 1400px) {
+    padding-top: 50px;
+  }
+  padding: 230px 0 20px 0;
   position: relative;
   font-family: futura-pt;
+  flex-wrap: wrap;
 }
 .background {
+  @media (max-width: 1400px) {
+    padding: 0 8%;
+  }
   width: 100%;
   height: 75%;
   justify-content: space-around;
@@ -63,41 +72,61 @@ export default {
 
   div {
     height: 100%;
-    width: 290px;
+    width: 25%;
+    max-width: 290px;
     background: #f1f9ff;
   }
 }
-figure {
+.wrapper {
+  @media (min-width: 1920px) {
+    transform: translateY(-200px);
+  }
+  @media (max-width: 1400px) {
+    margin: 0 8%;
+  }
   align-self: flex-end;
-  align-items: flex-end;
-  margin: 0;
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
   margin-right: 115px;
-  transform: translateY(-200px);
+}
+figure {
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
 
   &:nth-of-type(1) {
     & picture {
-      width: 461px;
-      height: 260px;
-      margin-bottom: 54px;
+      max-width: 461px;
+      max-height: 260px;
+      margin: 54px 0;
     }
   }
   &:nth-of-type(2) {
+    @media (max-width: 1000px) {
+      flex-wrap: wrap-reverse;
+    }
     picture {
-      width: 566px;
-      height: 364px;
+      @media (max-width: 1000px) {
+        margin: 0 0 10px 0;
+      }
+      max-width: 566px;
       margin-left: 10px;
+      width: 100%;
     }
   }
   picture {
-    box-shadow: 7px 10px 16px #00000029;
     img {
+      box-shadow: 7px 10px 16px #00000029;
       width: 100%;
+      object-fit: cover;
     }
   }
 
   figcaption {
     position: relative;
-    width: 360px;
+    max-width: 360px;
     font-size: 24px;
     line-height: 31px;
     font-weight: 300;
