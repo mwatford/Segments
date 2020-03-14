@@ -2,11 +2,6 @@
   <footer class="row">
     <logo class="asd"></logo>
     <div class="row">
-      <!-- <a href="">
-        <svg fill="#fff" width="20" height="20">
-          <instagram-icon></instagram-icon>
-        </svg>
-      </a> -->
       <a href="https://www.facebook.com/segmentsdevelopment">
         <svg fill="#fff" width="20px" height="20px">
           <facebook-icon></facebook-icon>
@@ -32,6 +27,9 @@ export default {
 
 <style lang="scss" scoped>
 footer {
+  @media (max-width: 1400px) {
+    padding: 0 8%;
+  }
   padding: 0 210px;
   background: #095590;
   color: #fff;

@@ -74,6 +74,7 @@ body {
 .background-2 {
   @media (max-width: 1400px) {
     padding: 0 8%;
+    bottom: 60px;
   }
   position: absolute;
   bottom: 190px;
@@ -87,7 +88,8 @@ body {
   & div {
     background: #ffffff;
     width: 25%;
-    height: 850px;
+    height: 100vh;
+    max-height: 850px;
   }
 }
 :root {
