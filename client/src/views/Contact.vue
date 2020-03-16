@@ -17,9 +17,9 @@
           <h3>
             Sprzedaż oraz Inwestycje Deweloperskie Polska
           </h3>
-          <h3>Szymon Polak</h3>
+          <h3>Szymon</h3>
           <h3>+48 795 755 925</h3>
-          <h3>s.polak@segments.pl</h3>
+          <h3>kontakt@segments.pl</h3>
         </div>
       </div>
       <div class="contact col">
@@ -28,8 +28,8 @@
           <h3>
             Sales and Development Investment European Union
           </h3>
-          <h3>Jakub Duraj</h3>
-          <h3>+48 795 755 925</h3>
+          <h3>Jakub</h3>
+          <h3>+48 795 755 920</h3>
           <h3>j.duraj@segments.pl</h3>
         </div>
       </div>
@@ -123,6 +123,5 @@ export default {
   @media (max-width: 1400px) {
     padding: 0 8%;
   }
-  // padding: 0 470px 0 435px;
 }
 </style>
