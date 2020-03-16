@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+* {
+  outline: none;
+}
 ul {
   @media (max-width: 1000px) {
     display: none;
