@@ -4,13 +4,13 @@
       <h1>Nasze produkty.</h1>
     </header>
     <ul>
-      <li
+      <router-link
         v-for="(item, index) in products"
         :key="index"
-        @click="openItem(item)"
+        :to="`/product/${item.name}`"
       >
         <product :item="item"></product>
-      </li>
+      </router-link>
     </ul>
   </section>
 </template>
@@ -18,12 +18,10 @@
 <script>
 import product from "../components/product-tile.vue";
 import products from "../products";
-import popup from "../components/popup.vue";
 
 export default {
   components: {
-    product,
-    popup
+    product
   },
   data() {
     return {
@@ -49,6 +47,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+  text-decoration: none;
+}
 section {
   @media (max-width: 1400px) {
     padding-bottom: 10px;
