@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button class="button">
     <chevron-left></chevron-left>
     <slot></slot>
   </button>
@@ -11,13 +11,13 @@ import chevronLeft from "./chevron-left.vue";
 export default {
   components: {
     "chevron-left": chevronLeft
-  },
-  props: ["icon"]
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-button {
+.button {
+  cursor: pointer;
   box-sizing: border-box;
   font-family: futura-pt, sans-serif;
   background: none;
