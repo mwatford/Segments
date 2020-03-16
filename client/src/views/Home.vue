@@ -1,6 +1,6 @@
 <template>
   <div class="home col" name="home">
-    <intro></intro>
+    <Intro></Intro>
     <navbar
       :sticky="true"
       :style="{
@@ -8,8 +8,8 @@
       }"
       :active="active"
     ></navbar>
-    <info></info>
-    <delivery></delivery>
+    <Info></Info>
+    <Delivery></Delivery>
     <Products></Products>
     <Contact></Contact>
     <app-footer></app-footer>
@@ -19,9 +19,9 @@
 <script>
 import header from "../components/header.vue";
 import navbar from "../components/navbar.vue";
-import intro from "./Intro.vue";
-import info from "./Info.vue";
-import delivery from "./Delivery.vue";
+import Intro from "./Intro.vue";
+import Info from "./Info.vue";
+import Delivery from "./Delivery.vue";
 import Products from "./Products.vue";
 import Contact from "./Contact.vue";
 import Footer from "../components/Footer.vue";
@@ -29,10 +29,10 @@ import Footer from "../components/Footer.vue";
 export default {
   components: {
     "common-header": header,
-    intro,
+    Intro,
     navbar,
-    info,
-    delivery,
+    Info,
+    Delivery,
     Products,
     Contact,
     "app-footer": Footer
@@ -112,7 +112,6 @@ export default {
     document.addEventListener("scroll", this.setScrollPos);
   },
   beforeUpdate() {
-    // this.animateElements();
     this.setIntroHeight();
     this.getElementList();
   }
