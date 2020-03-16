@@ -35,6 +35,7 @@ footer {
   color: #fff;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 a {
   margin: 10px 0 10px 30px;
