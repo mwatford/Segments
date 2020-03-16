@@ -87,6 +87,10 @@ body {
   z-index: 0;
 
   & div {
+    @media (max-width: 1400px) {
+      height: 50vh;
+      max-height: 500px;
+    }
     background: #ffffff;
     width: 25%;
     height: 100vh;

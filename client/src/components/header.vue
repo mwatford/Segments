@@ -30,7 +30,7 @@ export default {
   @media (max-width: 1400px) {
     padding: 0 8%;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 1000px) {
     font-size: 24px;
   }
   @media (max-width: 500px) {
@@ -45,7 +45,7 @@ export default {
   user-select: none;
 
   &--large {
-    @media (max-width: 750px) {
+    @media (max-width: 1000px) {
       font-size: 24px;
     }
     @media (max-width: 500px) {
