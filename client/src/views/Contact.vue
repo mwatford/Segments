@@ -5,11 +5,11 @@
       <div></div>
       <div></div>
     </div>
-    <header class="header">
+    <header class="header" data-aos="fade-up">
       <h1>Kontakt.</h1>
     </header>
     <div class="row content">
-      <div class="contact col">
+      <div class="contact col" data-aos="fade-right">
         <picture>
           <map-1></map-1>
         </picture>
@@ -22,7 +22,7 @@
           <h3>kontakt@segments.pl</h3>
         </div>
       </div>
-      <div class="contact col">
+      <div class="contact col" data-aos="fade-right" data-aos-delay="150">
         <picture><img src="/assets/mapa.png" alt=""/></picture>
         <div class="col">
           <h3>

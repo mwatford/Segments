@@ -1,5 +1,8 @@
 <template>
-  <header :class="['col', 'commonHeader', { 'commonHeader--large': large }]">
+  <header
+    :class="['col', 'commonHeader', { 'commonHeader--large': large }]"
+    data-aos="fade-right"
+  >
     <div>
       <h1>{{ main || "asdasdasdasd" }}</h1>
       <h3>{{ subheader || "asdasdas" }}</h3>

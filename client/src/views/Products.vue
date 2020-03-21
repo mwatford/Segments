@@ -1,6 +1,6 @@
 <template>
   <section id="produkty" class="col">
-    <header class="header">
+    <header class="header" data-aos="fade-down">
       <h1>Nasze produkty.</h1>
     </header>
     <ul>
@@ -9,7 +9,7 @@
         :key="index"
         :to="`/product/${item.name}`"
       >
-        <product :item="item"></product>
+        <product :item="item" data-aos="fade-up"></product>
       </router-link>
     </ul>
   </section>

@@ -1,13 +1,11 @@
 <template>
   <section class="col" id="dostawa">
     <div class="background-1 parallax">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div v-for="each in 3" :key="each"></div>
     </div>
     <header class="header">
-      <h1>Dostawa.</h1>
-      <p>
+      <h1 data-aos="fade-right">Dostawa.</h1>
+      <p data-aos="fade-right" data-aos-delay="100">
         Bądź świadomy swojej odpowiedzialności ekologicznej za produkty które
         kupujesz. Dzięki dostawie produktów bezpośrednio od producenta
         redukujemy koszty magazynowania, pracowników oraz dodatkowych
@@ -16,7 +14,7 @@
         bezpośrednio od nich.
       </p>
     </header>
-    <picture>
+    <picture data-aos="fade-left">
       <img src="/assets/delivery.png" alt="" />
     </picture>
     <div class="info col">
@@ -24,7 +22,7 @@
         main="Jak to wygląda"
         subheader="u innych?"
       ></common-header>
-      <div class="info-1 row">
+      <div class="info-1 row" data-aos="fade-up">
         <Card
           v-for="(card, index) in cards"
           :key="index"
@@ -42,7 +40,7 @@
         subheader="u nas?"
         :large="true"
       ></common-header>
-      <div class="row info-2">
+      <div class="row info-2" data-aos="fade-up">
         <Card
           v-for="(card, index) in asd"
           :key="index"
@@ -56,12 +54,15 @@
           :icon="card.icon"
         ></Card>
       </div>
-      <h1 class="wrap-up">Wybór jest prosty.</h1>
+      <h1 class="wrap-up" data-aos="fade-right">Wybór jest prosty.</h1>
     </div>
     <div class="background-2 parallax">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div
+        v-for="each in 3"
+        :key="each"
+        data-aos="fade-down"
+        :data-aos-delay="each * 200"
+      ></div>
     </div>
   </section>
 </template>

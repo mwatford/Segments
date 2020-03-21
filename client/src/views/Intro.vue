@@ -1,7 +1,7 @@
 <template>
   <section class="col" id="intro">
     <navbar></navbar>
-    <header class="col">
+    <header class="col" data-aos="fade-left">
       <h1>Jakość, która<br /><strong>zaprocentuje.</strong></h1>
     </header>
     <house></house>

@@ -6,14 +6,14 @@
       <div></div>
     </div>
     <header class="header">
-      <h1>O nas.</h1>
-      <p>
+      <h1 data-aos="fade-right">O nas.</h1>
+      <p data-aos="fade-right" data-aos-delay="100">
         Misją firmy SEGMENTS jest zostawić świat lepszym niż go zastaliśmy
         poprzez budowę ekologicznych, samowystarczalnych ‘’osiedli jutra’’ oraz
         sprzedaż materiałów do budowy domów pasywnych.
       </p>
       <br />
-      <p>
+      <p data-aos="fade-right" data-aos-delay="100">
         Firma SEGMENTS prowadzi inwestycje Deweloperskie z zakresu
         mieszkalnictwa jednorodzinnego, budując domy pasywne lub plus
         energetyczne, zasilane w 100% energią ze źródeł naturalnych.
@@ -22,15 +22,15 @@
         oraz Unii Europejskiej.
       </p>
     </header>
-    <div class="wrapper col">
-      <figure class="col parallax">
+    <div class="wrapper col" >
+      <figure class="col parallax" data-aos="fade-left">
         <picture><img src="/assets/o_nas-1.jpg" alt=""/></picture>
       </figure>
-      <figure class="row parallax">
+      <figure class="row parallax" data-aos="fade-left">
         <figcaption>
           Projekt deweloperski "Wędrowców" w Bielsku-Białej
         </figcaption>
-        <picture>
+        <picture >
           <img src="/assets/o_nas-2.jpg" alt="" />
         </picture>
       </figure>

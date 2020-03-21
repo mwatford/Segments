@@ -5,7 +5,14 @@
 </template>
 
 <script>
-export default {};
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+export default {
+  created() {
+    AOS.init();
+  }
+};
 </script>
 
 <style lang="scss">
