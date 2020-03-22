@@ -20,7 +20,10 @@ module.exports = merge(common, {
   plugins: [new HtmlWebpackPlugin({ template: "./client/src/index.html" })],
   devServer: {
     hot: true,
+    host: '0.0.0.0',
     port: 8080,
+    // public: 'asd.test:80',
+    useLocalIp: true,
     proxy: {
       "/api": "http://localhost:8000"
     },
