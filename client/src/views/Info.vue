@@ -125,6 +125,9 @@ figure {
   }
 
   figcaption {
+    @media (max-width: 750px) {
+      font-size: 20px;
+    }
     position: relative;
     max-width: 360px;
     font-size: 24px;
