@@ -117,7 +117,6 @@ export default {
   background: transparent;
   width: 100%;
   min-height: 200px;
-  height: 100%;
   display: flex;
   position: relative;
   font-size: 16px;
@@ -238,7 +237,6 @@ export default {
   }
 }
 .card-outer-box {
-  height: 100%;
   width: 300px;
   padding: 0px 6px;
   margin: 20px 0 80px 0;
