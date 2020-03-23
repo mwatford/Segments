@@ -7,72 +7,66 @@
       </picture>
     </section>
     <section class="col">
-      <div class="h-100">
-        <div class="wrapper">
-          <h3>{{ data.name }}</h3>
-          <p class="price">{{ data.price }}</p>
+      <div class="wrapper">
+        <h3>{{ data.name }}</h3>
+        <p class="price">{{ data.price }}</p>
+      </div>
+      <div
+        class="wrapper"
+        v-for="(content, index) in data.contents"
+        :key="index"
+      >
+        <div class="col" v-if="Array.isArray(content)">
+          <p v-for="(item, itemIndex) in content" :key="itemIndex">
+            {{ item }}
+          </p>
         </div>
-        <div
-          class="wrapper"
-          v-for="(content, index) in data.contents"
-          :key="index"
-        >
-          <div class="col" v-if="Array.isArray(content)">
-            <p v-for="(item, itemIndex) in content" :key="itemIndex">
-              {{ item }}
-            </p>
+        <div class="col" v-if="content.type === 'nested'">
+          <p>{{ content.header }}:</p>
+          <div class="col" v-for="(list, listIn) in content.data" :key="listIn">
+            <p>{{ list.header }}:</p>
+            <ul class="col">
+              <li v-for="listItem in list.data" :key="listItem">
+                {{ listItem }}
+              </li>
+            </ul>
           </div>
-          <div class="col" v-if="content.type === 'nested'">
-            <p>{{ content.header }}:</p>
-            <div
-              class="col"
-              v-for="(list, listIn) in content.data"
-              :key="listIn"
-            >
+        </div>
+        <div class="col" v-else>
+          <div
+            class="wrapper"
+            v-for="(list, listIndex) in content.lists"
+            :key="listIndex"
+          >
+            <p>{{ list.header }}:</p>
+            <ul class="col">
+              <li
+                v-for="(listItem, listItemIndex) in list.data"
+                :key="listItemIndex"
+              >
+                {{ listItem }}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col" v-if="content.products">
+          <div
+            class="wrapper"
+            v-for="(product, productIn) in content.products"
+            :key="productIn"
+          >
+            <h3>{{ product.name }}</h3>
+            <p class="price">{{ product.price }}</p>
+            <div class="col" v-for="(list, id) in product.lists" :key="id">
+              <hr />
               <p>{{ list.header }}:</p>
-              <ul class="col">
-                <li v-for="listItem in list.data" :key="listItem">
-                  {{ listItem }}
-                </li>
+              <ul
+                class="col"
+                v-for="(listItem, listItemId) in list.data"
+                :key="listItemId"
+              >
+                <li>{{ listItem }}</li>
               </ul>
-            </div>
-          </div>
-          <div class="col" v-else>
-            <div
-              class="wrapper"
-              v-for="(list, listIndex) in content.lists"
-              :key="listIndex"
-            >
-              <p>{{ list.header }}:</p>
-              <ul class="col">
-                <li
-                  v-for="(listItem, listItemIndex) in list.data"
-                  :key="listItemIndex"
-                >
-                  {{ listItem }}
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col" v-if="content.products">
-            <div
-              class="wrapper"
-              v-for="(product, productIn) in content.products"
-              :key="productIn"
-            >
-              <h3>{{ product.name }}</h3>
-              <p class="price">{{ product.price }}</p>
-              <div class="col" v-for="(list, id) in product.lists" :key="id">
-                <hr />
-                <p>{{ list.header }}:</p>
-                <ul
-                  class="col"
-                  v-for="(listItem, listItemId) in list.data"
-                  :key="listItemId"
-                >
-                  <li>{{ listItem }}</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -116,6 +110,9 @@ export default {
 .popup {
   @media (max-width: 850px) {
     flex-direction: column;
+    height: auto;
+    position: static;
+    transform: none;
   }
   position: fixed;
   top: 50%;
@@ -142,8 +139,10 @@ section {
 
   &:nth-of-type(1) {
     justify-content: center;
+    z-index: 1;
   }
   &:nth-of-type(2) {
+    z-index: 0;
     overflow-y: scroll;
     padding: 20px 0;
   }
@@ -153,20 +152,20 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   position: relative;
   width: 90%;
   margin: auto;
   max-width: 650px;
-  font-family: museo-slab, sans-serif;
 }
 .wrapper {
+  font-family: museo-slab, sans-serif;
   display: flex;
   margin-bottom: 40px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
+  width: 90%;
+  height: auto;
   max-width: 700px;
 
   h3 {
@@ -202,22 +201,27 @@ section {
     font-style: italic;
   }
   ul {
-    list-style-type: "-";
+    list-style-type: "\2D";
   }
 }
 .button {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   margin: 20px 0 0 20px;
 }
 picture {
+  @media (max-width: 850px) {
+    margin-top: 100px;
+  }
   display: flex;
   align-items: center;
   justify-content: center;
 
   img {
-    width: 100%;
+    width: 80%;
+    height: 100%;
+    min-width: 280px;
     max-width: 400px;
     object-fit: cover;
   }
