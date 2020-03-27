@@ -21,7 +21,7 @@ export default {};
   stroke-linecap: square;
   stroke-miterlimit: 5;
   stroke-width: 3.5px;
-  animation: animation 3s cubic-bezier(0.48, 0.77, 0, 1) forwards;
+  animation: animation 3.5s cubic-bezier(.51,.43,.19,.97) forwards;
 }
 .house {
   width: 90vw;
