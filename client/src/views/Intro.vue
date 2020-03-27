@@ -54,7 +54,7 @@ strong {
     font-size: 34px;
   }
   font-size: 5.5vw;
-  line-height: 0.7;
+  line-height: 0.8;
 }
 h1 {
   @media (max-width: 1000px) {
