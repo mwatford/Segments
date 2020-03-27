@@ -2,7 +2,7 @@
   <section class="col" id="intro">
     <navbar></navbar>
     <header class="col">
-      <h1>Jakość, która<br /><strong>zaprocentuje.</strong></h1>
+      <h1>Buduj z nami<br /><strong>swoją przyszłość.</strong></h1>
     </header>
     <house></house>
   </section>
@@ -48,16 +48,17 @@ header {
 }
 strong {
   @media (max-width: 1000px) {
-    font-size: 60px;
+    font-size: 53px;
   }
   @media (max-width: 500px) {
-    font-size: 42px;
+    font-size: 34px;
   }
   font-size: 5.5vw;
+  line-height: 0.7;
 }
 h1 {
   @media (max-width: 1000px) {
-    font-size: 28px;
+    font-size: 25px;
     line-height: 28px;
   }
   font-size: 3vw;
