@@ -17,7 +17,7 @@
           <h3>
             Sprzedaż oraz Inwestycje Deweloperskie Polska
           </h3>
-          <h3>Szymon</h3>
+          <h3>Mateusz</h3>
           <h3>+48 795 755 925</h3>
           <h3>kontakt@segments.pl</h3>
         </div>
