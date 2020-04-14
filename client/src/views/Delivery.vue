@@ -7,7 +7,7 @@
     </div>
     <header class="header">
       <h1>Dostawa.</h1>
-      <p>
+      <p class="paragraph">
         Bądź świadomy swojej odpowiedzialności ekologicznej za produkty które
         kupujesz. Dzięki dostawie produktów bezpośrednio od producenta
         redukujemy koszty magazynowania, pracowników oraz dodatkowych
@@ -35,7 +35,16 @@
           :margin="card.margin"
           :outside="card.outside"
           :icon="card.icon"
+          class="mobile--hide"
         ></Card>
+        <mobile-card
+          v-for="(card, index) in cards"
+          :key="card.header"
+          :content="card"
+          :number="index + 1"
+          :type="index % 2 === 0 ? 'gray' : 'lightGray'"
+          class="mobile"
+        ></mobile-card>
       </div>
       <common-header
         main="Jak to wygląda"
@@ -45,7 +54,7 @@
       <div class="row info-2">
         <Card
           v-for="(card, index) in asd"
-          :key="index"
+          :key="card.header"
           :type="card.type"
           :content="card"
           :number="index + 1"
@@ -54,26 +63,44 @@
           :outside="card.outside"
           :large="true"
           :icon="card.icon"
+          class="mobile--hide"
         ></Card>
+        <component
+          :class="['mobile card--round', index % 2 !== 0 ? 'a-end' : 'a-start']"
+          v-for="(card, index) in asd"
+          :key="index"
+          :is="`cardRound${index + 1}`"
+          alt="#"
+        />
       </div>
-      <h1 class="wrap-up">Wybór jest prosty.</h1>
-    </div>
-    <div class="background-2 parallax">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="wrap-up">
+        <div class="background-2 parallax">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <h1>Wybór jest prosty.</h1>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import Card from "../components/Card.vue";
+import mobileCard from "../components/MobileCard.vue";
 import header from "../components/header.vue";
+import cardRound1 from "../components/card-round-1.vue";
+import cardRound2 from "../components/card-round-2.vue";
+import cardRound3 from "../components/card-round-3.vue";
 
 export default {
   components: {
     Card,
-    "common-header": header
+    "common-header": header,
+    "mobile-card": mobileCard,
+    cardRound1,
+    cardRound2,
+    cardRound3
   },
   data() {
     return {
@@ -131,7 +158,7 @@ export default {
           margin: false,
           icon: "truck-1",
           header: "skład budowlany",
-          text: `Dopiero tutaj produkty z Twojego zamównienia są kompletowany.
+          text: `Dopiero tutaj produkty z Twojego zamównienia są kompletowane.
           Kolejny raz pokrywane są koszty pracowników transporu i magazynowania.`
         },
         {
@@ -184,34 +211,85 @@ export default {
   background: linear-gradient(180deg, #042640, #084c80, #128be6);
 
   header {
+    @media (max-width: 1000px) {
+      margin: 60px 0;
+    }
     margin: 145px 0 135px 0;
     align-self: flex-start;
   }
 }
 .info-1 {
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
   margin: 0 10px;
   flex-wrap: wrap;
   justify-content: center;
 }
 .info-2 {
+  @media (max-width: 1000px) {
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 8vw;
+    align-items: center;
+  }
+  @media (max-width: 770px) {
+    flex-direction: column;
+    padding: 0 16vw;
+  }
+  @media (max-width: 500px) {
+    padding: 0 8vw;
+  }
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 40px;
 }
+.card--round {
+  height: 190px;
+  width: 215px;
+}
 .wrap-up {
   @media (max-width: 1400px) {
-    margin: 200px auto;
-    font-size: 80px;
+    height: 90vh;
+    max-height: 600px;
   }
   @media (max-width: 1000px) {
-    font-size: 64px;
+    max-height: 500px;
   }
   @media (max-width: 500px) {
-    font-size: 30px;
+    max-height: 300px;
   }
   color: #fff;
-  margin: 450px 0 450px 280px;
-  font-size: 113px;
-  align-self: flex-start;
+  // margin: 450px 0 450px 280px;
+  // align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 850px;
+  margin-bottom: 100px;
+  text-align: center;
+
+  h1 {
+    @media (max-width: 1400px) {
+      font-size: 90px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 54px;
+    }
+    @media (max-width: 750px) {
+      font-size: 48px;
+    }
+    @media (max-width: 500px) {
+      font-size: 36px;
+    }
+    font-size: 113px;
+    // margin-left: 200px;
+  }
+
+  & .background-2 {
+    top: 0;
+  }
 }
 </style>

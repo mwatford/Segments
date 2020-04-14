@@ -245,7 +245,7 @@ export default {
   user-select: none;
 
   &--large {
-    @media (min-width: 420px) {
+    @media (min-width: 1400px) {
       @include large;
     }
   }

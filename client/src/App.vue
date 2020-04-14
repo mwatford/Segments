@@ -19,16 +19,20 @@ body {
   scroll-behavior: smooth;
 }
 .header {
-  @media (max-width: 1400px) {
-    margin: 0 8%;
-  }
-  margin-left: 300px;
   user-select: none;
   display: flex;
   flex-direction: column;
   z-index: 2;
 
   h1 {
+    @media (max-width: 1400px) {
+      margin: 0 8vw;
+      font-size: 56px;
+      padding: 0;
+    }
+    @media (max-width: 1000px) {
+      font-size: 48px;
+    }
     @media (max-width: 750px) {
       font-size: 34px;
     }
@@ -37,23 +41,37 @@ body {
     font-weight: 700;
     letter-spacing: 0;
     color: var(--header);
+    padding: 0 300px;
   }
-  p {
-    @media (max-width: 750px) {
-      font-size: 18px;
-    }
-    margin-top: 15px;
-    max-width: 930px;
-    font-family: museo-slab;
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: 0;
-    font-weight: 300;
+}
+.paragraph {
+  @media (max-width: 1400px) {
+    font-family: futura-pt, sans-serif;
+    margin: 0 8vw;
   }
+  @media (max-width: 1000px) {
+    font-size: 22px;
+    font-weight: 400;
+  }
+  @media (max-width: 750px) {
+    font-weight: 400;
+    line-height: 21px;
+    font-size: 16px;
+  }
+  margin: 15px 300px;
+  max-width: 930px;
+  font-family: museo-slab;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0;
+  font-weight: 300;
 }
 .background-1 {
   @media (max-width: 1400px) {
     padding: 0 8%;
+  }
+  @media (max-width: 1000px) {
+    display: none;
   }
   position: absolute;
   top: 0;
@@ -75,10 +93,9 @@ body {
 .background-2 {
   @media (max-width: 1400px) {
     padding: 0 8%;
-    bottom: 60px;
   }
   position: absolute;
-  bottom: 190px;
+  bottom: 0;
   width: 100%;
   padding: 0 380px;
   display: flex;
@@ -87,14 +104,10 @@ body {
   z-index: 0;
 
   & div {
-    @media (max-width: 1400px) {
-      height: 50vh;
-      max-height: 500px;
-    }
     background: #ffffff;
     width: 25%;
-    height: 100vh;
-    max-height: 850px;
+    height: 100%;
+    max-width: 300px;
   }
 }
 :root {
@@ -112,5 +125,48 @@ body {
 .col {
   display: flex;
   flex-direction: column;
+}
+.j-end {
+  justify-self: flex-end;
+}
+.j-start {
+  justify-self: flex-start;
+}
+.a-end {
+  align-self: flex-end;
+}
+.a-start {
+  align-self: flex-start;
+}
+.mobile {
+  display: none;
+  @media (max-width: 1000px) {
+    display: flex;
+  }
+  &--hide {
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+}
+.m-auto {
+  margin: auto;
+}
+// animations ---------------------
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 </style>

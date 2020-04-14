@@ -1,27 +1,27 @@
 <template>
   <section class="row" id="o_nas">
-    <div class="row background parallax">
+    <div class="row background parallax mobile--hide">
       <div></div>
       <div></div>
       <div></div>
     </div>
     <header class="header">
       <h1>O nas.</h1>
-      <p>
+      <p class="paragraph">
         Misją firmy SEGMENTS jest zostawić świat lepszym niż go zastaliśmy
         poprzez budowę ekologicznych, samowystarczalnych ‘’osiedli jutra’’ oraz
         sprzedaż materiałów do budowy domów pasywnych.
       </p>
       <br />
-      <p>
-        Firma SEGMENTS prowadzi inwestycje Deweloperskie z zakresu
-        mieszkalnictwa jednorodzinnego, budując domy pasywne lub plus
-        energetyczne, zasilane w 100% energią ze źródeł naturalnych.
-        <br />
-        Zajmujemy się również hurtową sprzedażą materiałów budowlanych w Polsce
-        oraz Unii Europejskiej.
-      </p>
     </header>
+    <p class="paragraph">
+      Firma SEGMENTS prowadzi inwestycje Deweloperskie z zakresu mieszkalnictwa
+      jednorodzinnego, budując domy pasywne lub plus energetyczne, zasilane w
+      100% energią ze źródeł naturalnych.
+      <br />
+      Zajmujemy się również hurtową sprzedażą materiałów budowlanych w Polsce
+      oraz Unii Europejskiej.
+    </p>
     <div class="wrapper col">
       <figure class="col parallax">
         <picture><img src="/assets/o_nas-1.jpg" alt=""/></picture>
@@ -97,20 +97,32 @@ figure {
   width: 100%;
 
   &:nth-of-type(1) {
+    @media (max-width: 1000px) {
+      order: 0;
+    }
     & picture {
-      max-width: 461px;
+      @media (max-width: 1000px) {
+        margin: 20px auto 0 0;
+        width: 80%;
+      }
+      max-width: 460px;
       max-height: 260px;
       margin: 54px 0;
+      min-width: 260px;
     }
   }
   &:nth-of-type(2) {
     @media (max-width: 1000px) {
-      flex-wrap: wrap-reverse;
+      flex-direction: column-reverse;
+      order: 2;
     }
     picture {
       @media (max-width: 1000px) {
+        width: 80%;
         margin: 0 0 10px 0;
+        max-width: 460px;
       }
+      min-width: 260px;
       max-width: 566px;
       margin-left: 10px;
       width: 100%;
@@ -125,9 +137,19 @@ figure {
   }
 
   figcaption {
-    @media (max-width: 750px) {
-      font-size: 20px;
+    @media (max-width: 1000px) {
+      order: 1;
+      margin: 20px auto;
+      // width: 290px;
+      font-size: 18px;
+      text-align: center;
+      font-weight: 400;
+      width: 100%;
+      max-width: 290px;
     }
+    // @media (max-width: 750px) {
+    //   font-size: 20px;
+    // }
     position: relative;
     max-width: 360px;
     font-size: 24px;

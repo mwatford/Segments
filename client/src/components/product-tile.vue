@@ -16,6 +16,13 @@ export default {
 
 <style lang="scss" scoped>
 .product {
+  @media (max-width: 1000px) {
+    border-radius: 17px;
+    width: 285px;
+    background: #fff;
+    box-shadow: #00000029 4px 1px 15px;
+    color: #000;
+  }
   min-width: 300px;
   width: 100%;
   height: 100%;
@@ -27,6 +34,10 @@ export default {
   padding: 5% 5% 31px 5%;
 
   &__image {
+    @media (max-width: 1000px) {
+      width: 115px;
+      height: 85px;
+    }
     width: 100%;
     background: #fff;
 
@@ -38,6 +49,9 @@ export default {
   }
 
   h3 {
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
     font-size: 22px;
     line-height: 29px;
     text-align: center;
@@ -46,6 +60,10 @@ export default {
   }
 
   h4 {
+    @media (max-width: 1000px) {
+      font-size: 16px;
+      color: #095590;
+    }
     font-size: 22px;
     line-height: 29px;
     font-weight: 400;

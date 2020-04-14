@@ -45,6 +45,9 @@ export default {
   user-select: none;
 
   &--large {
+    @media (max-width: 1400px) {
+      font-size: 40px;
+    }
     @media (max-width: 1000px) {
       font-size: 24px;
     }

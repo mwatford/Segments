@@ -54,20 +54,25 @@ section {
   @media (max-width: 1400px) {
     padding-bottom: 10px;
   }
-  padding: 50px 0 40px 0;
+  padding: 0 0 40px 0;
   align-items: center;
   font-family: futura-pt, sans-serif;
 }
 .header {
   @media (max-width: 1400px) {
-    margin-bottom: 0px;
+    margin: 30px;
+  }
+  @media (max-width: 1000px) {
+    display: none;
   }
   margin: auto;
-  margin-bottom: 100px;
+  margin: 50px 0;
 }
 ul {
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
+    transform: translateY(-75px);
+    z-index: 2;
   }
   @media (max-width: 750px) {
     grid-template-columns: 1fr;

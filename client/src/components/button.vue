@@ -1,7 +1,8 @@
 <template>
   <button class="button">
-    <chevron-left></chevron-left>
-    <slot></slot>
+    <chevron-left class="mobile--hide"></chevron-left>
+    <slot name="text"></slot>
+    <slot name="icon"></slot>
   </button>
 </template>
 
@@ -17,6 +18,11 @@ export default {
 
 <style lang="scss" scoped>
 .button {
+  @media (max-width: 1000px) {
+    background: #fff;
+    width: auto;
+    min-width: 50px;
+  }
   cursor: pointer;
   box-sizing: border-box;
   font-family: futura-pt, sans-serif;
@@ -32,5 +38,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 </style>

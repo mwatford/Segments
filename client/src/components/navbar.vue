@@ -30,6 +30,17 @@
         >
           kontakt
         </a>
+        <a
+          href="https://www.facebook.com/segmentsdevelopment"
+          :class="[
+            'nav__link mobile',
+            { 'nav__link--active': active === 'kontakt' }
+          ]"
+        >
+          <svg fill="#fff" width="20px" height="20px">
+            <facebook-icon></facebook-icon>
+          </svg>
+        </a>
       </ul>
     </div>
   </nav>
@@ -37,11 +48,13 @@
 
 <script>
 import logo from "../components/logo.vue";
+import fb from "../components/facebook.vue";
 
 export default {
   props: ["sticky", "active"],
   components: {
-    logo
+    logo,
+    "facebook-icon": fb
   },
   data() {
     return {};
@@ -63,14 +76,11 @@ ul {
     top: 100%;
     right: 0;
     align-items: flex-end;
+    animation: slideDown 0.4s ease;
   }
   list-style-type: none;
   display: flex;
   align-items: center;
-
-  a {
-    margin: 5px 0;
-  }
 }
 .nav {
   @media (max-width: 1400px) {
@@ -88,12 +98,15 @@ ul {
   height: 65px;
 
   &__logo {
+    @media (max-width: 1000px) {
+      height: 38px;
+    }
     @media (max-width: 500px) {
-      height: 30px;
+      height: 20px;
     }
     display: flex;
     margin: 5px 0;
-    height: 55px;
+    height: 46px;
   }
 
   &__link {
@@ -112,6 +125,9 @@ ul {
     &--active,
     &:hover {
       &::after {
+        @media (max-width: 1000px) {
+          display: none;
+        }
         content: "";
         position: absolute;
         display: flex;
@@ -123,30 +139,61 @@ ul {
         z-index: 2;
       }
     }
+    @media (max-width: 1000px) {
+      height: 50px;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 50px;
+      display: flex;
+      font-size: 14px;
+
+      &:hover,
+      &--active {
+        background: #0c67ae;
+      }
+    }
   }
 
   &--sticky {
+    @media (max-width: 1000px) {
+      top: 15px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      width: 30px;
+      right: 0;
+      padding: 0;
+      background: #095590;
+      box-shadow: 0px 0px 8px 2px #1c8fe7;
+      justify-content: center;
+      align-items: center;
+    }
     margin: 0;
-    position: fixed;
     background: #095590a1;
+    position: fixed;
     top: 0;
     height: 40px;
 
     & ul {
       @media (max-width: 1000px) {
         background: #095590a1;
+        animation: slideLeft 0.4s ease;
       }
     }
     .nav {
+      width: auto;
       &__logo {
+        @media (max-width: 1000px) {
+          display: none;
+        }
         margin: 10px 0;
         height: 20px;
       }
       &__link {
         @media (max-width: 1000px) {
           color: #fff;
-          margin-right: 5px;
-          margin-bottom: 5px;
+          // margin-right: 5px;
+          // margin-bottom: 5px;
         }
         font-size: 15px;
       }
@@ -173,7 +220,16 @@ ul {
   height: 100%;
 
   &:hover ul {
-    display: flex;
+    @media (max-width: 1000px) {
+      background: #095590;
+      // border: 1px solid #fff;
+      width: 250px;
+      // height: 335px;
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
   }
 }
 
