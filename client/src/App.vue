@@ -5,7 +5,15 @@
 </template>
 
 <script>
-export default {};
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+export default {
+  created() {
+    AOS.init();
+  },
+  mounted() {},
+};
 </script>
 
 <style lang="scss">
@@ -26,15 +34,16 @@ body {
 
   h1 {
     @media (max-width: 1400px) {
-      margin: 0 8vw;
+      margin: 0 10vw;
       font-size: 56px;
       padding: 0;
+      margin-bottom: 5px;
     }
     @media (max-width: 1000px) {
       font-size: 48px;
     }
     @media (max-width: 750px) {
-      font-size: 34px;
+      font-size: 24px;
     }
     margin-bottom: 25px;
     font-size: 80px;
@@ -47,7 +56,7 @@ body {
 .paragraph {
   @media (max-width: 1400px) {
     font-family: futura-pt, sans-serif;
-    margin: 0 8vw;
+    margin: 0 10vw;
   }
   @media (max-width: 1000px) {
     font-size: 22px;
@@ -93,6 +102,9 @@ body {
 .background-2 {
   @media (max-width: 1400px) {
     padding: 0 8%;
+  }
+  @media (max-width: 500px) {
+    padding: 0 6%;
   }
   position: absolute;
   bottom: 0;
