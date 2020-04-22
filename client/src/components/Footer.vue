@@ -20,17 +20,17 @@ export default {
   components: {
     logo,
     "facebook-icon": fb,
-    "instagram-icon": ig
-  }
+    "instagram-icon": ig,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 footer {
   @media (max-width: 1400px) {
-    padding: 0 8%;
+    padding: 5px 10%;
   }
-  padding: 0 210px;
+  padding: 10px 210px;
   background: #095590;
   color: #fff;
   justify-content: space-between;
@@ -38,7 +38,6 @@ footer {
   overflow: hidden;
 }
 a {
-  margin: 10px 0 10px 30px;
   display: flex;
   align-items: center;
   justify-content: center;
