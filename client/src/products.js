@@ -353,7 +353,7 @@ export default [
     img: "/assets/1-6.png",
     contents: [
       [
-        `Pręty żebrowane średnia od 8mm do 25mm, w długości 12m.
+        `Pręty żebrowane średnica od 8mm do 25mm, w długości 12m.
       Dostawa bezpośrednio z huty, minimum zamówienia 24 tony. `
       ]
     ],
