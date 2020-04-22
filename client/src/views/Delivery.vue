@@ -1,6 +1,6 @@
 <template>
   <section class="col" id="dostawa">
-    <div class="background-1 parallax">
+    <div class="background-1">
       <div></div>
       <div></div>
       <div></div>
@@ -74,12 +74,12 @@
         />
       </div>
       <div class="wrap-up">
-        <div class="background-2 parallax">
+        <div class="background-2">
           <div></div>
           <div></div>
           <div></div>
         </div>
-        <h1>Wybór jest prosty.</h1>
+        <h1 data-aos="fade">Wybór jest prosty.</h1>
       </div>
     </div>
   </section>
@@ -100,85 +100,85 @@ export default {
     "mobile-card": mobileCard,
     cardRound1,
     cardRound2,
-    cardRound3
+    cardRound3,
   },
   data() {
     return {
       asd: [
         {
-          header: "zamówienie",
+          header: "Zamówienie",
           text: "Zamawiasz towar u nas, a my kontaktujemy się z producentem.",
           margin: true,
           type: "yellow",
-          icon: "logo"
+          icon: "logo",
         },
         {
-          header: "wysyłka",
+          header: "Wysyłka",
           text:
             "Towar jest pakowany i wysyłany bezpośrednio od producenta w ciągu 2 dni roboczych.",
           type: "pink",
           margin: true,
           icon: "truck-2",
-          extra: true
+          extra: true,
         },
         {
-          header: "klient",
+          header: "Klient",
           text: "Zakupy są u Ciebie.",
           type: "blue",
           icon: "client",
-          margin: true
-        }
+          margin: true,
+        },
       ],
       cards: [
         {
-          header: "zamówienie",
+          header: "Zamówienie",
           text: "Zamawiasz towar.",
           icon: "text",
-          margin: true
+          margin: true,
         },
         {
           margin: true,
           extra: true,
-          header: "producent",
+          header: "Producent",
           icon: "truck-1",
           text:
-            "Sklep zamawia towar w hurtowni, hurtownia zamawia towar u producenta."
+            "Sklep zamawia towar w hurtowni, hurtownia zamawia towar u producenta.",
         },
         {
           outside: true,
           extra: false,
           margin: false,
           icon: "truck-1",
-          header: "hurtownia",
+          header: "Hurtownia",
           text: `Materiały trafiaja do hurtowni, skąd wysyłane są do składu budowlanego.
-          Dodatkowy koszt pracowników, magazynowania i transportu.`
+          Dodatkowy koszt pracowników, magazynowania i transportu.`,
         },
         {
           extra: true,
           margin: false,
           icon: "truck-1",
-          header: "skład budowlany",
+          header: "Skład budowlany",
           text: `Dopiero tutaj produkty z Twojego zamównienia są kompletowane.
-          Kolejny raz pokrywane są koszty pracowników transporu i magazynowania.`
+          Kolejny raz pokrywane są koszty pracowników transporu i magazynowania.`,
         },
         {
           margin: true,
           icon: "client",
-          header: "klient",
-          text: `Zakupy są u Ciebie.`
-        }
-      ]
+          header: "Klient",
+          text: `Zakupy są u Ciebie.`,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 #dostawa {
   @media (max-width: 1400px) {
-    padding-top: 50px;
+    padding-top: 40px;
   }
-  padding-top: 130px;
+  padding-top: 80px;
   background: #fff;
   font-family: futura-pt, sans-serif;
   position: relative;
@@ -188,7 +188,10 @@ export default {
 
   picture {
     @media (max-width: 1400px) {
-      margin: 54px 8% 0 8%;
+      margin: 54px 10% 0 10%;
+    }
+    @media (max-width: 1000px) {
+      margin: 20px auto 10px auto;
     }
     align-self: flex-end;
     margin: 115px 115px 0 0;
@@ -197,6 +200,10 @@ export default {
     max-height: 505px;
 
     img {
+      @media (max-width: 1000px) {
+        width: 60vw;
+        box-shadow: none;
+      }
       box-shadow: 7px 10px 16px #00000029;
       width: 100%;
       height: 100%;
@@ -212,7 +219,12 @@ export default {
 
   header {
     @media (max-width: 1000px) {
-      margin: 60px 0;
+      &:nth-of-type(1) {
+        margin: 90px auto 47px auto;
+      }
+      &:nth-of-type(2) {
+        margin: 43px auto 25px auto;
+      }
     }
     margin: 145px 0 135px 0;
     align-self: flex-start;
@@ -230,7 +242,7 @@ export default {
   @media (max-width: 1000px) {
     justify-content: space-around;
     width: 100%;
-    padding: 0 8vw;
+    padding: 0 10vw;
     align-items: center;
   }
   @media (max-width: 770px) {
@@ -238,7 +250,7 @@ export default {
     padding: 0 16vw;
   }
   @media (max-width: 500px) {
-    padding: 0 8vw;
+    padding: 0 10vw;
   }
   flex-wrap: wrap;
   justify-content: center;
@@ -255,13 +267,12 @@ export default {
   }
   @media (max-width: 1000px) {
     max-height: 500px;
+    margin-bottom: 80px;
   }
   @media (max-width: 500px) {
-    max-height: 300px;
+    max-height: 240px;
   }
   color: #fff;
-  // margin: 450px 0 450px 280px;
-  // align-self: flex-start;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -282,10 +293,9 @@ export default {
       font-size: 48px;
     }
     @media (max-width: 500px) {
-      font-size: 36px;
+      font-size: 32px;
     }
     font-size: 113px;
-    // margin-left: 200px;
   }
 
   & .background-2 {

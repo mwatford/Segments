@@ -6,15 +6,15 @@
       </h4>
       <app-arrow :color="'#095590'" class="mobile" slot="icon"></app-arrow>
     </app-button>
-    <img
-      src="/assets/logo-color.svg"
-      alt="segments logo in color"
-      class="logo mobile"
-    />
     <section class="col">
       <picture>
         <img :src="images" alt="#" />
       </picture>
+      <img
+        src="/assets/logo-color.svg"
+        alt="segments logo in color"
+        class="logo mobile"
+      />
     </section>
     <section class="col">
       <div class="col details">
@@ -102,20 +102,20 @@ export default {
       return this.$route.params.name;
     },
     data() {
-      return productList.find(el => el.name === this.name);
+      return productList.find((el) => el.name === this.name);
     },
     products() {
       return this.data.products;
     },
     images() {
       return this.data.img;
-    }
+    },
   },
   methods: {
     close() {
       this.$router.go(-1);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -127,8 +127,10 @@ export default {
   @media (max-width: 1000px) {
     flex-direction: column;
     height: auto;
+    min-height: 100vh;
     position: static;
     transform: none;
+    justify-content: space-between;
   }
   position: fixed;
   top: 50%;
@@ -154,37 +156,52 @@ section {
   position: relative;
 
   &:nth-of-type(1) {
+    @media (max-width: 1000px) {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
     justify-content: center;
     z-index: 1;
   }
   &:nth-of-type(2) {
     z-index: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 0;
   }
 }
 .details {
   @media (max-width: 750px) {
     font-size: 18px;
+    margin-right: auto;
   }
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 15px 0;
+  margin: 35px 10%;
+  max-width: 270px;
+  text-align: left;
   font-family: futura-pt, sans-serif;
   font-size: 22px;
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 21px;
+  }
+
+  & p {
+    font-style: italic;
+    font-weight: 300;
+  }
 }
 .wrapper {
   @media (max-width: 1000px) {
-    border-radius: 84px;
+    border-top-left-radius: 84px;
+    border-top-right-radius: 84px;
     background: #095590;
-    padding: 46px 38px;
+    padding: 38px 10% 21px 10%;
     color: #fff;
+    height: 100%;
     font-family: futura-pt, sans-serif;
-    width: 95%;
-  }
-  @media (max-width: 500px) {
-    border-radius: 60px;
+    width: 100%;
+    margin-bottom: 0;
   }
   font-family: museo-slab, sans-serif;
   display: flex;
@@ -195,7 +212,7 @@ section {
   width: 100%;
   padding-right: 5px;
   height: auto;
-  max-width: 700px;
+  // max-width: 700px;
 
   & .wrapper {
     padding: 0;
@@ -224,12 +241,13 @@ section {
     margin-top: 8px;
     font-size: 24px;
     line-height: 25px;
-    font-weight: 300;
+    font-weight: 400;
     width: 100%;
   }
   .price {
     @media (max-width: 1000px) {
       font-size: 18px;
+      margin-bottom: 20px;
     }
     font-family: futura-pt, sans-serif;
     font-size: 30px;
@@ -243,9 +261,13 @@ section {
   }
 }
 .button {
+  @media (max-width: 1000px) {
+    top: 12px;
+    left: 15px;
+  }
   position: fixed;
-  top: 15px;
-  left: 15px;
+  top: 25px;
+  left: 25px;
 }
 .logo {
   @media (max-width: 500px) {
@@ -255,19 +277,20 @@ section {
   position: absolute;
   top: 30px;
   right: 30px;
+  z-index: 3;
 }
 picture {
   @media (max-width: 1000px) {
-    margin: 100px 0 50px 0;
+    margin: 50px auto 0 auto;
   }
   display: flex;
   align-items: center;
   justify-content: center;
 
   img {
-    width: 50%;
+    width: 43%;
     height: 100%;
-    min-width: 155px;
+    min-width: 135px;
     max-width: 400px;
     object-fit: cover;
   }
@@ -285,7 +308,7 @@ a.mobile {
   background-color: #0983e2;
   font-family: futura-pt, sans-serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 10px;
   display: flex;
   border: none;
   align-items: center;

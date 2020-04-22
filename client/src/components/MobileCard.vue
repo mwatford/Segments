@@ -6,7 +6,7 @@
     >
       <h3>{{ number }}.&ensp;</h3>
       <h3>
-        {{ content.header.toUpperCase() }}
+        {{ content.header }}
       </h3>
     </header>
     <div class="mobileCard__content" v-if="visible">
@@ -33,18 +33,20 @@ export default {
 }
 .mobileCard {
   color: #fff;
-  margin: 10px auto;
-  width: 280px;
+  margin: 0 auto 7px auto;
+  width: 210px;
 
   &__header {
     cursor: pointer;
     justify-content: flex-start;
     border: 2px solid;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border-radius: 8px;
 
     & h3 {
-      font-size: 16px;
+      font-size: 20px;
+      letter-spacing: -0.21px;
+      font-weight: 400;
     }
 
     &--gray {
@@ -56,9 +58,10 @@ export default {
   }
 }
 .paragraph {
-  margin: 10px;
+  margin: 15px 5px;
   text-align: center;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
 }
 </style>

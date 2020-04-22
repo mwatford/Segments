@@ -1,9 +1,14 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" class="house" viewBox="0 0 1713.102 173.972">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1696.247 311.391"
+    class="house"
+    @click="length"
+  >
     <path
       class="a"
-      d="M-277.1,160.989l1087.582,1.36h207.381V111.3l-7.581,2.012,44.292-58.8-6.128,48.167-27.659,7.376,31.534-4.247,9.741-73.442,10.393,69.065,27.771-45.28.5-21.885-34.644-8.009,34.141,4.377V8.35l7.189-7.19,18.2,6.817V32.992l-20.265,20.265L1131,33.755l51.166-16.391L1109.857,94.29l-33.4,7.748,34.272-2.5,73.423-77.3,58.169,76.795-58.411-70.052L1121.5,94.29V171.14l-98.2-11.064,96.184.913,111.327,5.606.372-62.173h20.638l-49.526-64.8,57.908,6.128,59.472,64.2-83.351-1.285,83.8,5.141.13,5.364-.261,36.9-84.562,4,84.692,2.384v.317H1432.5"
-      transform="translate(278.852 0.874)"
+      d="M647.561,388.949H541.979V315.592l-83.157-21.881v111.14l-93.975-4.512V343.457l69.271-.969.5,67.317h19.528l.043-116.875L414.063,296.6l-.117-3.112,42.79-3.962,51.506,14.263V195.623l-95.88-88.749V333.5l-130.35,5.151-.792-68.939-49.129,10.3v41.2l80.167-4.593-.631-127.188,11.986,5.394-.792,121.633,66.561-6.735-.792-158.876-83.2,35.262v145.9l102.219-5.275V103.7L290.727,164.323v59.43L222.6,247.194v91.624h39.37v51.823H-1048.687"
+      transform="translate(1050, -100.414)"
     />
   </svg>
 </template>
@@ -14,18 +19,35 @@ export default {};
 
 <style lang="scss" scoped>
 .a {
-  stroke-dasharray: 3760;
-  stroke-dashoffset: 3760;
+  stroke-dasharray: 4582;
+  stroke-dashoffset: -4582;
   fill: none;
   stroke: #fff;
   stroke-linecap: square;
   stroke-miterlimit: 5;
   stroke-width: 3.5px;
-  animation: animation 3.5s cubic-bezier(.51,.43,.19,.97) forwards;
+  animation: animation 3.5s cubic-bezier(0.51, 0.43, 0.19, 0.97) forwards;
 }
+.a {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+}
+// .house {
+//   width: 90vw;
+//   min-height: 170px;
+// }
 .house {
-  width: 90vw;
-  min-height: 170px;
+  @media (max-width: 1000px) {
+    position: static;
+  }
+  width: 100%;
+  position: absolute;
+  bottom: 250px;
+  max-width: 1600px;
+  // min-height: 170px;
+  // height: 120px;
 }
 @keyframes animation {
   to {

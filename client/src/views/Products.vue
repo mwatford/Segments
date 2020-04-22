@@ -21,12 +21,12 @@ import products from "../products";
 
 export default {
   components: {
-    product
+    product,
   },
   data() {
     return {
       products,
-      active: null
+      active: null,
     };
   },
   methods: {
@@ -35,14 +35,14 @@ export default {
     },
     closeItem() {
       this.active = null;
-    }
+    },
   },
   mounted() {
     this.$eventBus.$on("closeItem", this.closeItem);
-    document.addEventListener("keydown", ev => {
+    document.addEventListener("keydown", (ev) => {
       if (ev.keyCode === 27) this.closeItem();
     });
-  }
+  },
 };
 </script>
 
@@ -52,9 +52,9 @@ a {
 }
 section {
   @media (max-width: 1400px) {
-    padding-bottom: 10px;
+    padding-bottom: 0;
   }
-  padding: 0 0 40px 0;
+  padding-bottom: 40px;
   align-items: center;
   font-family: futura-pt, sans-serif;
 }

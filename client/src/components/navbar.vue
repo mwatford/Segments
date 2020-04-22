@@ -4,7 +4,9 @@
       <img src="/assets/logo.svg" alt="" class="nav__logo" />
     </a>
     <div class="row dropdown">
-      <div class="dropdown__icon">&equiv;</div>
+      <div class="dropdown__icon">
+        <img src="/assets/icon-segments.svg" alt="" />
+      </div>
       <ul class="row ul">
         <a
           href="#o_nas"
@@ -34,7 +36,7 @@
           href="https://www.facebook.com/segmentsdevelopment"
           :class="[
             'nav__link mobile',
-            { 'nav__link--active': active === 'kontakt' }
+            { 'nav__link--active': active === 'kontakt' },
           ]"
         >
           <svg fill="#fff" width="20px" height="20px">
@@ -54,13 +56,13 @@ export default {
   props: ["sticky", "active"],
   components: {
     logo,
-    "facebook-icon": fb
+    "facebook-icon": fb,
   },
   data() {
     return {};
   },
   methods: {},
-  mounted() {}
+  mounted() {},
 };
 </script>
 
@@ -84,7 +86,10 @@ ul {
 }
 .nav {
   @media (max-width: 1400px) {
-    padding: 0 8%;
+    padding: 0 10%;
+  }
+  @media (max-width: 500px) {
+    height: auto;
   }
   width: 100%;
   padding: 0 300px;
@@ -106,7 +111,7 @@ ul {
     }
     display: flex;
     margin: 5px 0;
-    height: 46px;
+    height: 33px;
   }
 
   &__link {
@@ -117,6 +122,7 @@ ul {
     font-family: futura-pt, sans-serif;
     font-weight: 700;
     font-style: normal;
+    font-size: 24px;
     letter-spacing: 0;
     width: auto;
     margin-left: 40px;
@@ -206,10 +212,14 @@ ul {
   }
   cursor: pointer;
   display: none;
-  font-size: 26px;
   align-items: center;
   justify-content: center;
   height: 100%;
+
+  img {
+    // height: 30%;
+    height: 14px;
+  }
 }
 
 .dropdown {

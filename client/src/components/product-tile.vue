@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  props: ["img", "item"]
+  props: ["img", "item"],
 };
 </script>
 
@@ -18,10 +18,12 @@ export default {
 .product {
   @media (max-width: 1000px) {
     border-radius: 17px;
+    min-width: 285px;
     width: 285px;
     background: #fff;
     box-shadow: #00000029 4px 1px 15px;
     color: #000;
+    padding: 10px 50px;
   }
   min-width: 300px;
   width: 100%;
@@ -51,6 +53,7 @@ export default {
   h3 {
     @media (max-width: 1000px) {
       font-size: 16px;
+      line-height: 21px;
     }
     font-size: 22px;
     line-height: 29px;

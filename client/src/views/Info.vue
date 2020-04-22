@@ -1,6 +1,6 @@
 <template>
   <section class="row" id="o_nas">
-    <div class="row background parallax mobile--hide">
+    <div class="row background mobile--hide">
       <div></div>
       <div></div>
       <div></div>
@@ -12,7 +12,7 @@
         poprzez budowę ekologicznych, samowystarczalnych ‘’osiedli jutra’’ oraz
         sprzedaż materiałów do budowy domów pasywnych.
       </p>
-      <br />
+      <br class="mobile--hide" />
     </header>
     <p class="paragraph">
       Firma SEGMENTS prowadzi inwestycje Deweloperskie z zakresu mieszkalnictwa
@@ -23,10 +23,10 @@
       oraz Unii Europejskiej.
     </p>
     <div class="wrapper col">
-      <figure class="col parallax">
+      <figure class="col">
         <picture><img src="/assets/o_nas-1.jpg" alt=""/></picture>
       </figure>
-      <figure class="row parallax">
+      <figure class="row">
         <figcaption>
           Projekt deweloperski "Wędrowców" w Bielsku-Białej
         </figcaption>
@@ -43,7 +43,7 @@ export default {
   components: {},
   data() {
     return {};
-  }
+  },
 };
 </script>
 
@@ -52,6 +52,9 @@ export default {
   @media (max-width: 1400px) {
     padding-top: 50px;
   }
+  @media (max-width: 1000px) {
+    padding: 37px 0 0 0;
+  }
   padding: 230px 0 20px 0;
   position: relative;
   font-family: futura-pt;
@@ -59,7 +62,7 @@ export default {
 }
 .background {
   @media (max-width: 1400px) {
-    padding: 0 8%;
+    padding: 0 10%;
   }
   width: 100%;
   height: 75%;
@@ -77,12 +80,16 @@ export default {
     background: #f1f9ff;
   }
 }
+
 .wrapper {
   @media (min-width: 1920px) {
     transform: translateY(-200px);
   }
   @media (max-width: 1400px) {
-    margin: 0 8%;
+    margin: 0 10%;
+  }
+  @media (max-width: 1000px) {
+    margin: 23px 10%;
   }
   align-self: flex-end;
   justify-content: flex-end;
@@ -90,6 +97,7 @@ export default {
   width: 100%;
   margin-right: 115px;
 }
+
 figure {
   align-items: flex-end;
   justify-content: flex-end;
@@ -98,58 +106,68 @@ figure {
 
   &:nth-of-type(1) {
     @media (max-width: 1000px) {
-      order: 0;
+      order: 2;
     }
     & picture {
       @media (max-width: 1000px) {
-        margin: 20px auto 0 0;
-        width: 80%;
+        width: 60vw;
+        margin: 0 0 0 auto;
       }
       max-width: 460px;
       max-height: 260px;
       margin: 54px 0;
-      min-width: 260px;
+      min-width: 215px;
     }
   }
   &:nth-of-type(2) {
     @media (max-width: 1000px) {
       flex-direction: column-reverse;
-      order: 2;
     }
     picture {
       @media (max-width: 1000px) {
-        width: 80%;
-        margin: 0 0 10px 0;
+        width: 60vw;
+        margin: 0;
+        align-self: flex-start;
         max-width: 460px;
       }
-      min-width: 260px;
+      min-width: 215px;
       max-width: 566px;
       margin-left: 10px;
       width: 100%;
     }
   }
-  picture {
-    img {
-      box-shadow: 7px 10px 16px #00000029;
+
+  img {
+    @media (max-width: 1000px) {
       width: 100%;
-      object-fit: cover;
+      box-shadow: none;
     }
+    box-shadow: 7px 10px 16px #00000029;
+    width: 100%;
+    object-fit: cover;
   }
 
   figcaption {
     @media (max-width: 1000px) {
-      order: 1;
-      margin: 20px auto;
-      // width: 290px;
-      font-size: 18px;
+      margin: 10px auto 0 auto;
+      font-size: 14px;
+      line-height: 18px;
       text-align: center;
       font-weight: 400;
       width: 100%;
-      max-width: 290px;
+      max-width: 200px;
+      border: none;
+      font-style: italic;
+
+      &::after {
+        content: "";
+        display: flex;
+        background-color: #095590a1;
+        height: 2px;
+        width: 60%;
+        margin: 5px auto 0 auto;
+      }
     }
-    // @media (max-width: 750px) {
-    //   font-size: 20px;
-    // }
     position: relative;
     max-width: 360px;
     font-size: 24px;
@@ -158,6 +176,13 @@ figure {
     text-align: right;
     border-bottom: 4px solid #095590;
     padding-bottom: 15px;
+  }
+}
+.paragraph {
+  &:nth-of-type(1) {
+    @media (max-width: 1000px) {
+      order: 2;
+    }
   }
 }
 </style>

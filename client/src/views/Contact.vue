@@ -48,24 +48,28 @@ import map_1 from "../components/map-1.vue";
 
 export default {
   components: {
-    "map-1": map_1
-  }
+    "map-1": map_1,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 #kontakt {
   @media (max-width: 1400px) {
-    padding: 60px 0 40px 0;
+    padding: 60px 0 50px 0;
   }
   @media (max-width: 1000px) {
-    padding: 20px 0 40px 0;
+    padding: 0 0 10px 0;
+    transform: translateY(-40px);
   }
   position: relative;
-  padding: 170px 0 40px 0;
+  padding: 170px 0 50px 0;
   overflow: hidden;
 
   header {
+    @media (max-width: 1000px) {
+      margin: 0;
+    }
     font-family: futura-pt, sans-serif;
     margin-bottom: 25px;
   }
@@ -98,13 +102,23 @@ a {
     @media (max-width: 1400px) {
       margin: 10px 8%;
     }
+    @media (max-width: 1000px) {
+      margin-top: 40px;
+    }
     margin-left: 200px;
   }
   &:nth-of-type(2) {
     @media (max-width: 1400px) {
       margin: 10px 8%;
     }
+    @media (max-width: 1000px) {
+      margin-top: 40px;
+    }
     margin-right: 260px;
+  }
+
+  &__icon {
+    height: 22px;
   }
 
   h3 {
@@ -112,6 +126,11 @@ a {
       font-size: 20px;
       line-height: 1;
       font-family: futura-pt, sans-serif;
+      font-weight: 400;
+    }
+    @media (max-width: 500px) {
+      font-size: 14px;
+      line-height: 16px;
     }
     font-family: museo-slab, sans-serif;
     font-size: 24px;
@@ -150,8 +169,8 @@ a {
 
   & .col {
     @media (max-width: 1000px) {
-      border-left: 2px solid #084c80;
-      width: 70%;
+      border-left: 3px solid #084c80;
+      width: 75%;
     }
     width: 100%;
     padding-left: 25px;

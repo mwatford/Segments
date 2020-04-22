@@ -11,29 +11,32 @@
 export default {
   props: {
     main: {
-      type: String
+      type: String,
     },
     subheader: {
-      type: String
+      type: String,
     },
     large: {
       type: Boolean,
       required: false,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .commonHeader {
   @media (max-width: 1400px) {
-    padding: 0 8%;
+    padding: 0 10%;
   }
   @media (max-width: 1000px) {
     font-size: 24px;
   }
   @media (max-width: 500px) {
+    font-size: 20px;
+  }
+  @media (max-width: 359px) {
     font-size: 18px;
   }
   font-size: 39px;
@@ -52,16 +55,19 @@ export default {
       font-size: 24px;
     }
     @media (max-width: 500px) {
+      font-size: 20px;
+    }
+    @media (max-width: 359px) {
       font-size: 18px;
     }
     font-size: 52.5px;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 1.9em;
   }
   h3 {
-    font-size: 1.077em;
+    font-size: 1em;
   }
   // h3 {
   //   font-size: 42px;
