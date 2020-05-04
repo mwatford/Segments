@@ -1,46 +1,46 @@
 <template>
   <section class="row" id="o_nas">
-    <div class="row background mobile--hide">
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="row info-background">
+      <picture class="grid">
+        <img src="/assets/Repeat Grid 4.png" alt="" />
+      </picture>
     </div>
-    <header class="header">
-      <h1>O nas.</h1>
+    <header class="header text--white text-md--black">
+      <h1 class="text-md--header">
+        Chcemy zostawić świat lepszym, niż go zastaliśmy.
+      </h1>
       <p class="paragraph">
-        Misją firmy SEGMENTS jest zostawić świat lepszym niż go zastaliśmy
-        poprzez budowę ekologicznych, samowystarczalnych ‘’osiedli jutra’’ oraz
-        sprzedaż materiałów do budowy domów pasywnych.
+        To nasza misja. Realizujemy ją poprzez budowę ekologicznych,
+        samowystarczalnych „osiedli jutra” oraz dzięki sprzedaży materiałów
+        budowlanych, służących do budowy domów pasywnych. Prowadzimy inwestycje
+        deweloperskie z zakresu mieszkalnictwa jednorodzinnego - budujemy domy
+        pasywne <br />i plus energetyczne, zasilane w 100% energią pochodzącą ze
+        źródeł naturalnych. Zajmujemy się również hurtową sprzedażą materiałów
+        budowlanych w Polsce i na terenie Unii Europejskiej.
       </p>
-      <br class="mobile--hide" />
     </header>
-    <p class="paragraph">
-      Firma SEGMENTS prowadzi inwestycje Deweloperskie z zakresu mieszkalnictwa
-      jednorodzinnego, budując domy pasywne lub plus energetyczne, zasilane w
-      100% energią ze źródeł naturalnych.
-      <br />
-      Zajmujemy się również hurtową sprzedażą materiałów budowlanych w Polsce
-      oraz Unii Europejskiej.
-    </p>
-    <div class="wrapper col">
-      <figure class="col">
-        <picture><img src="/assets/o_nas-1.jpg" alt=""/></picture>
-      </figure>
-      <figure class="row">
-        <figcaption>
-          Projekt deweloperski "Wędrowców" w Bielsku-Białej
-        </figcaption>
-        <picture>
-          <img src="/assets/o_nas-2.jpg" alt="" />
-        </picture>
-      </figure>
-    </div>
+    <figure class="col">
+      <picture><img src="/assets/o_nas-1.jpg" alt=""/></picture>
+      <picture>
+        <img src="/assets/o_nas-2.jpg" alt="" />
+      </picture>
+      <picture>
+        <img src="/assets/o_nas-3.png" alt="" />
+      </picture>
+      <figcaption>
+        Projekt deweloperski "Wędrowców" w Bielsku-Białej
+      </figcaption>
+    </figure>
   </section>
 </template>
 
 <script>
+import animationSvg from "../components/animations-svg.vue";
+
 export default {
-  components: {},
+  components: {
+    "animation-svg": animationSvg,
+  },
   data() {
     return {};
   },
@@ -49,29 +49,44 @@ export default {
 
 <style lang="scss" scoped>
 #o_nas {
+  @media (min-width: 1920px) {
+    height: 950px;
+  }
   @media (max-width: 1400px) {
     padding-top: 50px;
   }
   @media (max-width: 1000px) {
     padding: 37px 0 0 0;
+    justify-content: center;
   }
-  padding: 230px 0 20px 0;
+  @media (max-width: 500px) {
+    padding: 0;
+  }
+  padding: 0 0 20px 0;
   position: relative;
   font-family: futura-pt;
   flex-wrap: wrap;
 }
-.background {
+
+.info-background {
+  @media (min-width: 1920px) {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
   @media (max-width: 1400px) {
     padding: 0 10%;
   }
+  @media (max-width: 992px) {
+    display: none;
+  }
   width: 100%;
   height: 75%;
-  justify-content: space-around;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  padding: 0 300px;
+  background: #042640;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 85%);
+  overflow: hidden;
 
   div {
     height: 100%;
@@ -80,60 +95,92 @@ export default {
     background: #f1f9ff;
   }
 }
-
-.wrapper {
+header {
+  @media (max-width: 500px) {
+    margin-top: 37px;
+  }
+  margin-top: 60px;
+  position: relative;
+}
+.grid {
+  @media (min-width: 1900px) {
+    display: flex;
+  }
+  display: none;
+  position: absolute;
+  right: -50px;
+  top: 0;
+  transform: translateY(-15%);
+  z-index: 20;
+}
+figure {
   @media (min-width: 1920px) {
-    transform: translateY(-200px);
+    transform: translateY(-270px);
   }
   @media (max-width: 1400px) {
-    margin: 0 10%;
+    transform: none;
+    margin: 35px 10% 0 auto;
   }
   @media (max-width: 1000px) {
+    position: relative;
+    border: none;
+    margin: 35px 10%;
+    height: auto;
+  }
+  @media (max-width: 500px) {
     margin: 23px 10%;
   }
-  align-self: flex-end;
+  align-items: center;
   justify-content: flex-end;
   display: flex;
+  max-width: 465px;
   width: 100%;
-  margin-right: 115px;
-}
+  height: 700px;
+  margin-left: auto;
+  margin-right: 180px;
+  border: 15px solid #084c80;
+  position: relative;
+  margin-top: 35px;
+  z-index: 2;
 
-figure {
-  align-items: flex-end;
-  justify-content: flex-end;
-  display: flex;
-  width: 100%;
+  picture {
+    min-width: 215px;
+    max-width: 484px;
+    width: 150%;
+    position: absolute;
 
-  &:nth-of-type(1) {
-    @media (max-width: 1000px) {
-      order: 2;
-    }
-    & picture {
+    &:nth-child(1) {
       @media (max-width: 1000px) {
+        position: static;
+        max-width: 430px;
         width: 60vw;
-        margin: 0 0 0 auto;
+        margin-right: auto;
       }
-      max-width: 460px;
-      max-height: 260px;
-      margin: 54px 0;
-      min-width: 215px;
+      top: 20px;
+      right: 80px;
     }
-  }
-  &:nth-of-type(2) {
-    @media (max-width: 1000px) {
-      flex-direction: column-reverse;
-    }
-    picture {
+    &:nth-child(2) {
       @media (max-width: 1000px) {
+        position: static;
+        max-width: 430px;
         width: 60vw;
-        margin: 0;
-        align-self: flex-start;
-        max-width: 460px;
+        order: 2;
+        margin-left: auto;
       }
-      min-width: 215px;
-      max-width: 566px;
-      margin-left: 10px;
-      width: 100%;
+      max-width: 480px;
+      top: 160px;
+      left: 55px;
+    }
+    &:nth-child(3) {
+      @media (max-width: 1000px) {
+        position: static;
+        max-width: 430px;
+        width: 60vw;
+        display: none;
+      }
+      top: 330px;
+      right: 415px;
+      max-width: 347px;
     }
   }
 
@@ -142,7 +189,7 @@ figure {
       width: 100%;
       box-shadow: none;
     }
-    box-shadow: 7px 10px 16px #00000029;
+    box-shadow: -13px -16px 18px #00000029;
     width: 100%;
     object-fit: cover;
   }
@@ -157,7 +204,6 @@ figure {
       width: 100%;
       max-width: 200px;
       border: none;
-      font-style: italic;
 
       &::after {
         content: "";
@@ -169,12 +215,14 @@ figure {
       }
     }
     position: relative;
-    max-width: 360px;
-    font-size: 24px;
+    max-width: 320px;
+    font-size: 22px;
     line-height: 31px;
     font-weight: 300;
-    text-align: right;
-    border-bottom: 4px solid #095590;
+    text-align: left;
+    font-style: italic;
+    border-bottom: 4px solid #084c80;
+    margin-bottom: 40px;
     padding-bottom: 15px;
   }
 }
