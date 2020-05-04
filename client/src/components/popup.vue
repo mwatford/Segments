@@ -212,7 +212,6 @@ section {
   width: 100%;
   padding-right: 5px;
   height: auto;
-  // max-width: 700px;
 
   & .wrapper {
     padding: 0;
