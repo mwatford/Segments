@@ -6,6 +6,9 @@
     </header>
     <house class="mobile--hide"></house>
     <house-mobile class="mobile"></house-mobile>
+    <picture class="intro-background">
+      <img src="/assets/background.svg" />
+    </picture>
   </section>
 </template>
 
@@ -30,10 +33,17 @@ section {
     min-height: 600px;
     box-shadow: none;
     justify-content: space-between;
-    background: linear-gradient(#042640, #084c80, #128be6);
+
+    @media (max-height: 730px) {
+      justify-content: flex-start;
+
+      header {
+        margin-top: 80px;
+      }
+    }
   }
   @media (max-width: 500px) {
-    padding: 24px 0 73px 0;
+    padding: 24px 0 70px 0;
     min-height: unset;
     height: 410px;
   }
@@ -42,9 +52,36 @@ section {
   user-select: none;
   padding: 70px 0 0 0;
   align-items: flex-start;
-  background: linear-gradient(111deg, #042640, #084c80, #128be6);
+  background: #042640;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  position: relative;
+  // background: linear-gradient(111deg, #042640, #084c80, #128be6);
   font-family: "futura-pt", sans-serif;
-  box-shadow: -2px 25px 31px #00000029;
+}
+.intro-background {
+  @media (max-width: 1000px) {
+    height: 100%;
+  }
+  @media (max-width: 500px) {
+    height: 320px;
+  }
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 }
 header {
   @media (max-width: 1400px) {
@@ -53,7 +90,7 @@ header {
   @media (max-width: 500px) {
     margin: 20px 10%;
   }
-  margin: 120px 300px;
+  margin: 120px var(--gutters-lg);
 }
 strong {
   @media (max-width: 1000px) {
