@@ -3,8 +3,10 @@
     <picture class="product__image">
       <img :src="item.img" alt="" />
     </picture>
-    <h3>{{ item.name }}</h3>
-    <h4>{{ item.price }}</h4>
+    <div class="col product__text ">
+      <h3 class="text-lg--black">{{ item.name }}</h3>
+      <h4 class="text--blue2">{{ item.price }}</h4>
+    </div>
   </div>
 </template>
 
@@ -17,31 +19,34 @@ export default {
 <style lang="scss" scoped>
 .product {
   @media (max-width: 1000px) {
-    border-radius: 17px;
-    min-width: 285px;
-    width: 285px;
-    background: #fff;
-    box-shadow: #00000029 4px 1px 15px;
-    color: #000;
-    padding: 10px 50px;
+    width: 320px;
   }
-  min-width: 300px;
-  width: 100%;
-  height: 100%;
-  background: #095590;
-  color: #fff;
-  align-items: center;
-  font-family: futura-pt;
-  cursor: pointer;
-  padding: 5% 5% 31px 5%;
+  @media (max-width: 750px) {
+    max-width: 280px;
+    padding: 10px 20px;
+  }
+  @media (max-width: 500px) {
+    margin: 10px auto;
+  }
+  border-radius: 17px;
+  width: 380px;
+  background: #fff;
+  box-shadow: #00000029 4px 1px 15px;
+  padding: 10px 50px;
+  max-width: 370px;
+  margin: 20px 15px;
 
   &__image {
-    @media (max-width: 1000px) {
-      width: 115px;
-      height: 85px;
+    @media (max-width: 1400px) {
+      width: 165px;
+    }
+    @media (max-width: 750px) {
+      width: 140px;
     }
     width: 100%;
+    height: auto;
     background: #fff;
+    margin: 0 auto;
 
     & img {
       height: 100%;
@@ -50,7 +55,19 @@ export default {
     }
   }
 
+  &__text {
+    @media (max-width: 750px) {
+      justify-content: flex-start;
+    }
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+  }
   h3 {
+    @media (max-width: 1400px) {
+      font-size: 20px;
+    }
     @media (max-width: 1000px) {
       font-size: 16px;
       line-height: 21px;
@@ -63,9 +80,11 @@ export default {
   }
 
   h4 {
+    @media (max-width: 1400px) {
+      font-size: 18px;
+    }
     @media (max-width: 1000px) {
       font-size: 16px;
-      color: #095590;
     }
     font-size: 22px;
     line-height: 29px;
