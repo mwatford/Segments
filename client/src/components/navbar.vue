@@ -92,13 +92,13 @@ ul {
     height: auto;
   }
   width: 100%;
-  padding: 0 300px;
+  padding: 0 var(--gutters-lg);
   top: 0;
   justify-content: space-between;
   align-items: center;
   color: #fff;
   transition: background-color 0.3s ease;
-  z-index: 3;
+  z-index: 10;
   font-family: futura-pt, sans-serif;
   height: 65px;
 
@@ -122,7 +122,7 @@ ul {
     font-family: futura-pt, sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 0;
     width: auto;
     margin-left: 40px;
@@ -198,8 +198,6 @@ ul {
       &__link {
         @media (max-width: 1000px) {
           color: #fff;
-          // margin-right: 5px;
-          // margin-bottom: 5px;
         }
         font-size: 15px;
       }
@@ -217,7 +215,6 @@ ul {
   height: 100%;
 
   img {
-    // height: 30%;
     height: 14px;
   }
 }
@@ -232,9 +229,7 @@ ul {
   &:hover ul {
     @media (max-width: 1000px) {
       background: #095590;
-      // border: 1px solid #fff;
       width: 250px;
-      // height: 335px;
       display: flex;
       position: fixed;
       top: 0;
