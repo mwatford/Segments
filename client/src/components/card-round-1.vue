@@ -37,13 +37,13 @@
         </g>
       </g>
     </g>
-    <text x="50%" y="50%" class="text">
-      Zamawiasz towar u
+    <text x="45%" y="50%" class="text">
+      Zamawiasz towar u nas,
     </text>
-    <text x="45%" y="60%" class="text">
-      nas, a my kontaktujemy
+    <text x="53%" y="60%" class="text">
+      a my kontaktujemy
     </text>
-    <text x="52%" y="70%" class="text">
+    <text x="53%" y="70%" class="text">
       się z producentem.
     </text>
   </svg>

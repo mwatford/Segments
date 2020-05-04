@@ -5,31 +5,29 @@
       <h2 class="card__number">{{ number }}</h2>
       <h4 class="card__header">{{ content.header }}</h4>
       <p
+        v-html="content.text"
         v-if="!outside"
         :class="[
           'card__text',
           { 'card__text--extra': extra },
-          { 'card__text--no-margin': !margin }
+          { 'card__text--no-margin': !margin },
         ]"
-      >
-        {{ content.text }}
-      </p>
+      ></p>
       <div :class="['card__icon', { 'card__icon--client': icon === 'client' }]">
         <img :src="`/assets/${icon}.svg`" alt="" v-if="icon !== 'text'" />
         <h3 v-else>SKLEP BUDOWLANY</h3>
       </div>
     </div>
     <p
+      v-html="content.text"
       v-if="outside"
       :class="[
         'card__text',
         'card__text--outside',
         { 'card__text--extra': extra },
-        { 'card__text--no-margin': !margin }
+        { 'card__text--no-margin': !margin },
       ]"
-    >
-      {{ content.text }}
-    </p>
+    ></p>
   </div>
 </template>
 
@@ -43,8 +41,8 @@ export default {
     "extra",
     "margin",
     "outside",
-    "large"
-  ]
+    "large",
+  ],
 };
 </script>
 

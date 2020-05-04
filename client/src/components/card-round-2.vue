@@ -134,10 +134,10 @@
       </g>
     </g>
     <text x="52%" y="50%" class="text">
-      Towar jest pakowany i
+      Towar jest pakowany
     </text>
-    <text x="51%" y="60%" class="text">
-      wysyłany bezpośrednio
+    <text x="50%" y="60%" class="text">
+      i wysyłany bezpośrednio
     </text>
     <text x="51%" y="70%" class="text">
       od producenta w ciągu

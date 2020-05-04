@@ -31,13 +31,16 @@ export default {};
 .house {
   @media (max-width: 1000px) {
     position: static;
+
+    @media (max-height: 730px) {
+      position: absolute;
+      bottom: 20px;
+    }
   }
   width: 100%;
   position: absolute;
   bottom: 250px;
   max-width: 1600px;
-  // min-height: 170px;
-  // height: 120px;
 }
 @keyframes animation {
   to {

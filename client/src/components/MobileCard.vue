@@ -10,7 +10,7 @@
       </h3>
     </header>
     <div class="mobileCard__content" v-if="visible">
-      <p class="paragraph">{{ content.text }}</p>
+      <p class="paragraph" v-html="content.text">{{ content.text }}</p>
     </div>
   </div>
 </template>
@@ -20,21 +20,21 @@ export default {
   props: ["content", "number", "type"],
   data() {
     return {
-      visible: false
+      visible: false,
     };
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
 .mobileCard {
+  @media (min-width: 1000px) {
+    width: 350px;
+  }
   color: #fff;
   margin: 0 auto 7px auto;
   width: 210px;
+  user-select: none;
 
   &__header {
     cursor: pointer;
@@ -58,10 +58,11 @@ export default {
   }
 }
 .paragraph {
-  margin: 15px 5px;
+  margin: 15px auto;
   text-align: center;
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
+  width: 210px;
 }
 </style>

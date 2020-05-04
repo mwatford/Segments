@@ -31,6 +31,7 @@ export default {
     padding: 0 10%;
   }
   @media (max-width: 1000px) {
+    padding: 0 10%;
     font-size: 24px;
   }
   @media (max-width: 500px) {
@@ -44,6 +45,7 @@ export default {
   color: #fff;
   align-items: flex-start;
   padding-left: 280px;
+  padding-top: 40px;
   font-family: futura-pt, sans-serif;
   user-select: none;
 
@@ -53,6 +55,7 @@ export default {
     }
     @media (max-width: 1000px) {
       font-size: 24px;
+      padding-top: 0;
     }
     @media (max-width: 500px) {
       font-size: 20px;
@@ -61,6 +64,7 @@ export default {
       font-size: 18px;
     }
     font-size: 52.5px;
+    padding-top: 60px;
   }
 
   h1 {
@@ -69,8 +73,5 @@ export default {
   h3 {
     font-size: 1em;
   }
-  // h3 {
-  //   font-size: 42px;
-  // }
 }
 </style>

@@ -38,11 +38,11 @@
         </g>
       </g>
     </g>
-    <text x="59%" y="55%" class="text">
-      Zakupy są u
+    <text x="63%" y="55%" class="text">
+      Zakupy są
     </text>
-    <text x="67%" y="65%" class="text">
-      Ciebie.
+    <text x="66%" y="65%" class="text">
+      u Ciebie.
     </text>
   </svg>
 </template>
