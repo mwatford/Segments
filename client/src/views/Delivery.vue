@@ -1,25 +1,23 @@
 <template>
-  <section class="col" id="dostawa">
-    <div class="background-1">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <header class="header">
-      <h1>Dostawa.</h1>
+  <section class="col" id="dostawa" name="dostawa">
+    <header class="header" id="bs">
+      <h1>Bądź świadomy.</h1>
       <p class="paragraph">
-        Bądź świadomy swojej odpowiedzialności ekologicznej za produkty które
-        kupujesz. Dzięki dostawie produktów bezpośrednio od producenta
-        redukujemy koszty magazynowania, pracowników oraz dodatkowych
-        transportów. Nasze osiedla budowane są tylko z wysokiej jakości
-        materiałów Polskich producentów, oraz dostarczane są na budowę
-        bezpośrednio od nich.
+        Ponoś odpowiedzialność ekologiczną za produkty, które kupujesz. Dzięki
+        dostawie produktów prosto od producenta, redukujemy koszty
+        magazynowania, pracowników <br />i dodatkowych transportów. Nasze
+        osiedla budujemy wyłącznie z wysokiej jakości materiałów polskich
+        producentów, dostarczanych na budowę bezpośrednio od nich.
       </p>
     </header>
-    <picture>
-      <img src="/assets/delivery.png" alt="" />
-    </picture>
-    <div class="info col">
+    <div class="animation">
+      <picture>
+        <img src="/assets/delivery.png" alt="" />
+      </picture>
+      <app-animation></app-animation>
+    </div>
+    <div class="bkg"></div>
+    <div class="info col" id="inni">
       <common-header
         main="Jak to wygląda"
         subheader="u innych?"
@@ -35,7 +33,7 @@
           :margin="card.margin"
           :outside="card.outside"
           :icon="card.icon"
-          class="mobile--hide"
+          class="show--1500"
         ></Card>
         <mobile-card
           v-for="(card, index) in cards"
@@ -43,10 +41,11 @@
           :content="card"
           :number="index + 1"
           :type="index % 2 === 0 ? 'gray' : 'lightGray'"
-          class="mobile"
+          class="hide--1500"
         ></mobile-card>
       </div>
       <common-header
+        id="my"
         main="Jak to wygląda"
         subheader="u nas?"
         :large="true"
@@ -92,6 +91,7 @@ import header from "../components/header.vue";
 import cardRound1 from "../components/card-round-1.vue";
 import cardRound2 from "../components/card-round-2.vue";
 import cardRound3 from "../components/card-round-3.vue";
+import animation from "../components/animations-svg.vue";
 
 export default {
   components: {
@@ -101,13 +101,15 @@ export default {
     cardRound1,
     cardRound2,
     cardRound3,
+    "app-animation": animation,
   },
   data() {
     return {
       asd: [
         {
           header: "Zamówienie",
-          text: "Zamawiasz towar u nas, a my kontaktujemy się z producentem.",
+          text:
+            "Zamawiasz towar u nas, <br />a my kontaktujemy się <br />z producentem.",
           margin: true,
           type: "yellow",
           icon: "logo",
@@ -115,7 +117,7 @@ export default {
         {
           header: "Wysyłka",
           text:
-            "Towar jest pakowany i wysyłany bezpośrednio od producenta w ciągu 2 dni roboczych.",
+            "Towar jest pakowany <br />i wysyłany bezpośrednio od producenta w ciągu <br />2 dni roboczych.",
           type: "pink",
           margin: true,
           icon: "truck-2",
@@ -142,7 +144,7 @@ export default {
           header: "Producent",
           icon: "truck-1",
           text:
-            "Sklep zamawia towar w hurtowni, hurtownia zamawia towar u producenta.",
+            "Sklep zamawia towar <br />w hurtowni, hurtownia zamawia towar <br />u producenta.",
         },
         {
           outside: true,
@@ -151,15 +153,15 @@ export default {
           icon: "truck-1",
           header: "Hurtownia",
           text: `Materiały trafiaja do hurtowni, skąd wysyłane są do składu budowlanego.
-          Dodatkowy koszt pracowników, magazynowania i transportu.`,
+          Dodatkowy koszt pracowników, magazynowania <br /> i transportu.`,
         },
         {
           extra: true,
           margin: false,
           icon: "truck-1",
           header: "Skład budowlany",
-          text: `Dopiero tutaj produkty z Twojego zamównienia są kompletowane.
-          Kolejny raz pokrywane są koszty pracowników transporu i magazynowania.`,
+          text: `Dopiero tutaj produkty <br />z Twojego zamównienia <br />są kompletowane.
+          Kolejny raz pokrywane są koszty pracowników transporu <br />i magazynowania.`,
         },
         {
           margin: true,
@@ -178,13 +180,51 @@ export default {
   @media (max-width: 1400px) {
     padding-top: 40px;
   }
-  padding-top: 80px;
+  @media (max-width: 500px) {
+    padding-top: 0;
+  }
   background: #fff;
   font-family: futura-pt, sans-serif;
   position: relative;
   z-index: 1;
   width: 100%;
   min-height: 100vh;
+}
+.bkg {
+  @media (max-width: 1000px) {
+    display: none;
+  }
+  width: 100%;
+  position: relative;
+  background: #042640;
+  height: 300px;
+  transform: rotateZ(180deg) translateY(-30px);
+
+  &::before {
+    content: "";
+    background: #fff;
+    clip-path: ellipse(80% 51% at 29% 65%);
+    width: 100%;
+    height: 100%;
+    height: 400px;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+}
+
+.animation {
+  @media (max-width: 1400px) {
+    justify-content: center;
+    margin: 0px 10%;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+  align-items: center;
+  margin: 0 var(--gutters-lg);
+  flex-wrap: wrap;
 
   picture {
     @media (max-width: 1400px) {
@@ -193,8 +233,10 @@ export default {
     @media (max-width: 1000px) {
       margin: 20px auto 10px auto;
     }
-    align-self: flex-end;
-    margin: 115px 115px 0 0;
+    @media (max-width: 750px) {
+      margin: 20px auto;
+    }
+    margin: 115px 0 0 0;
     z-index: 1;
     max-width: 755px;
     max-height: 505px;
@@ -210,11 +252,32 @@ export default {
       object-fit: cover;
     }
   }
-}
 
+  svg {
+    @media (min-width: 1920px) {
+      bottom: 200px;
+      right: 0;
+      display: flex;
+      max-width: 800px;
+    }
+    display: none;
+    position: absolute;
+    bottom: 130px;
+    max-width: 500px;
+  }
+}
+.header {
+  @media (max-width: 1000px) {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  padding-top: 60px;
+}
 .info {
+  @media (max-width: 1000px) {
+    transform: translateY(-50px);
+  }
   align-items: center;
-  transform: translateY(-40px);
   background: linear-gradient(180deg, #042640, #084c80, #128be6);
 
   header {
@@ -226,15 +289,19 @@ export default {
         margin: 43px auto 25px auto;
       }
     }
-    margin: 145px 0 135px 0;
+    margin: 60px 0 135px 0;
     align-self: flex-start;
   }
 }
 .info-1 {
-  @media (max-width: 1000px) {
+  @media (max-width: 1550px) {
     flex-direction: column;
   }
-  margin: 0 10px;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  margin: 0 10px 130px 10px;
   flex-wrap: wrap;
   justify-content: center;
 }
