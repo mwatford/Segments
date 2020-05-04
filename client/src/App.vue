@@ -17,14 +17,27 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "./styles/scss/variables.scss";
+
 body {
   background-color: #fff;
   scroll-behavior: smooth;
+}
+.hide--1500 {
+  @media (max-width: 1550px) {
+    display: flex;
+  }
+  @media (min-width: 1550px) {
+    display: none !important;
+  }
+}
+.show--1500 {
+  @media (max-width: 1550px) {
+    display: none !important;
+  }
+  @media (min-width: 1550px) {
+    display: flex;
+  }
 }
 .header {
   user-select: none;
@@ -34,23 +47,23 @@ body {
 
   h1 {
     @media (max-width: 1400px) {
-      margin: 0 10vw;
-      font-size: 56px;
+      font-size: 40px;
+      margin-left: 10vw;
+      margin-right: 10vw;
       padding: 0;
-      margin-bottom: 5px;
     }
-    @media (max-width: 1000px) {
-      font-size: 48px;
+    @media (max-width: $md) {
+      font-size: 34px;
     }
-    @media (max-width: 750px) {
+    @media (max-width: $sm) {
       font-size: 24px;
+      margin-bottom: 15px;
     }
-    margin-bottom: 25px;
-    font-size: 80px;
+    margin-bottom: 35px;
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: 0;
-    color: var(--header);
-    padding: 0 300px;
+    padding: 0 var(--gutters-lg);
   }
 }
 .paragraph {
@@ -58,22 +71,22 @@ body {
     font-family: futura-pt, sans-serif;
     margin: 0 10vw;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     font-size: 22px;
     font-weight: 400;
   }
-  @media (max-width: 750px) {
+  @media (max-width: $sm) {
     font-weight: 400;
     line-height: 21px;
     font-size: 16px;
   }
-  margin: 15px 300px;
-  max-width: 930px;
-  font-family: museo-slab;
-  font-size: 24px;
-  line-height: 32px;
+  margin: 0 var(--gutters-lg);
+  max-width: 705px;
+  font-family: futura-pt;
+  font-size: 28px;
+  line-height: 30px;
   letter-spacing: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 .background-1 {
   @media (max-width: 1400px) {
@@ -100,10 +113,10 @@ body {
   }
 }
 .background-2 {
-  @media (max-width: 1400px) {
+  @media (max-width: 1600px) {
     padding: 0 8%;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     padding: 0 6%;
   }
   position: absolute;
@@ -121,14 +134,6 @@ body {
     height: 100%;
     max-width: 300px;
   }
-}
-:root {
-  --pink: #ef529d;
-  --yellow: #fbb040;
-  --blue: #58c6d5;
-  --gray: #707070;
-  --lightGray: #a5a5a5;
-  --header: #231f20;
 }
 .row {
   display: flex;
