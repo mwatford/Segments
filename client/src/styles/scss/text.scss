@@ -1,0 +1,46 @@
+@mixin colors() {
+  &--white {
+    color: #fff;
+  }
+  &--black {
+    color: #000;
+  }
+  &--header {
+    color: var(--header);
+  }
+  &--blue2 {
+    color: var(--blue2);
+  }
+  &--blue3 {
+    color: var(--blue3);
+  }
+}
+
+.text {
+  @include colors();
+}
+
+.text-lg {
+  @include respond-to("lg") {
+    @include colors();
+  }
+}
+
+.text-md {
+  @include respond-to("md") {
+    @include colors();
+  }
+}
+
+.text-sm {
+  @include respond-to("sm") {
+    @include colors();
+  }
+}
+
+.text-xs {
+  @include respond-to("xs") {
+    @include colors();
+  }
+}
+

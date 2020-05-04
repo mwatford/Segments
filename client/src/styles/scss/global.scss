@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  a {
+    &:visited {
+      color: unset;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --pink: #ef529d;
+  --yellow: #fbb040;
+  --blue: #58c6d5;
+  --blue2: #095590;
+  --blue3: #042640;
+  --gray: #707070;
+  --lightGray: #a5a5a5;
+  --header: #231f20;
+
+  --gutters-lg: 275px;
+}
+
+@import "./variables.scss";
+
+$breakpoints: (
+  "xs": (
+    max-width: $xs,
+  ),
+  "sm": (
+    max-width: $sm,
+  ),
+  "md": (
+    max-width: $md,
+  ),
+  "lg": (
+    max-width: $lg,
+  ),
+) !default;
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@import "./text.scss";
