@@ -1,7 +1,7 @@
 <template>
   <section id="produkty" class="col">
     <header class="header">
-      <h1>Nasze produkty.</h1>
+      <h1 class="text--header">Nasze produkty.</h1>
     </header>
     <ul>
       <router-link
@@ -52,44 +52,44 @@ a {
 }
 section {
   @media (max-width: 1400px) {
-    padding-bottom: 0;
+    padding: 0 10%;
   }
   padding-bottom: 40px;
   align-items: center;
   font-family: futura-pt, sans-serif;
+  padding: 0 var(--gutters-lg);
+  transform: translateY(-110px);
+  z-index: 3;
 }
 .header {
   @media (max-width: 1400px) {
-    margin: 30px;
+    margin: 130px 0 0 0;
   }
   @media (max-width: 1000px) {
     display: none;
   }
-  margin: auto;
-  margin: 50px 0;
+  margin: 190px 0 50px 0;
+  align-self: flex-start;
+
+  h1 {
+    @media (max-width: 1400px) {
+      font-size: 46px;
+      margin: 40px 0;
+    }
+    @media (max-width: 1200px) {
+      font-size: 40px;
+    }
+    font-size: 80px;
+    padding: 0;
+  }
 }
 ul {
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(2, 1fr);
-    transform: translateY(-75px);
     z-index: 2;
   }
-  @media (max-width: 750px) {
-    grid-template-columns: 1fr;
-  }
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  grid-gap: 20px;
-  margin: 0 8%;
-}
-.scale-enter-active,
-.scale-leave-active {
-  transition: all 0.3s;
-}
-.scale-leave-to,
-.scale-enter {
-  opacity: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
 }
 </style>
