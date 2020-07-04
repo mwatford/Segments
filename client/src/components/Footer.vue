@@ -30,7 +30,7 @@ footer {
   @media (max-width: 1400px) {
     padding: 5px 10%;
   }
-  padding: 10px 210px;
+  padding: 10px var(--gutters-lg);
   background: #095590;
   color: #fff;
   justify-content: space-between;
