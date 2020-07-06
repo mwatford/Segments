@@ -12,7 +12,6 @@ export default {
   created() {
     AOS.init();
   },
-  mounted() {},
 };
 </script>
 
@@ -22,6 +21,10 @@ export default {
 body {
   background-color: #fff;
   scroll-behavior: smooth;
+  max-width: 100vw;
+}
+section {
+  z-index: -1;
 }
 .hide--1500 {
   @media (max-width: 1550px) {
@@ -43,7 +46,7 @@ body {
   user-select: none;
   display: flex;
   flex-direction: column;
-  z-index: 2;
+  z-index: 0;
 
   h1 {
     @media (max-width: 1400px) {

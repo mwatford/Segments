@@ -59,7 +59,7 @@ section {
   font-family: futura-pt, sans-serif;
   padding: 0 var(--gutters-lg);
   transform: translateY(-110px);
-  z-index: 3;
+  z-index: -1;
 }
 .header {
   @media (max-width: 1400px) {
@@ -91,5 +91,8 @@ ul {
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
+}
+a {
+  all: unset;
 }
 </style>

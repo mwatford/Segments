@@ -28,6 +28,7 @@ export default {
   @media (max-width: 500px) {
     margin: 10px auto;
   }
+  cursor: pointer;
   border-radius: 17px;
   width: 380px;
   background: #fff;

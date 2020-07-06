@@ -36,7 +36,6 @@
           href="https://www.facebook.com/segmentsdevelopment"
           :class="[
             'nav__link mobile',
-            { 'nav__link--active': active === 'kontakt' },
           ]"
         >
           <svg fill="#fff" width="20px" height="20px">
@@ -127,6 +126,7 @@ ul {
     width: auto;
     margin-left: 40px;
     position: relative;
+    z-index: 20;
 
     &--active,
     &:hover {
@@ -142,7 +142,6 @@ ul {
         top: 100%;
         height: 2px;
         background: #9ebcd3;
-        z-index: 2;
       }
     }
     @media (max-width: 1000px) {

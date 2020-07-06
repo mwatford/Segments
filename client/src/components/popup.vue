@@ -164,19 +164,24 @@ section {
     z-index: 1;
   }
   &:nth-of-type(2) {
+    @media (min-width: 1000px) {
+      padding-right: 30px;
+    }
     z-index: 0;
     overflow-y: auto;
     padding: 0;
   }
 }
 .details {
+  @media (min-width: 1000px) {
+    margin: 35px auto 35px 0;
+  }
   @media (max-width: 750px) {
+    max-width: 270px;
     font-size: 18px;
-    margin-right: auto;
   }
   display: flex;
-  margin: 35px 10%;
-  max-width: 270px;
+  margin: 35px auto 35px 10%;
   text-align: left;
   font-family: futura-pt, sans-serif;
   font-size: 22px;
@@ -199,11 +204,10 @@ section {
     padding: 38px 10% 21px 10%;
     color: #fff;
     height: 100%;
-    font-family: futura-pt, sans-serif;
     width: 100%;
     margin-bottom: 0;
   }
-  font-family: museo-slab, sans-serif;
+  font-family: futura-pt, sans-serif;
   display: flex;
   margin-bottom: 40px;
   flex-direction: column;
@@ -281,13 +285,14 @@ section {
 picture {
   @media (max-width: 1000px) {
     margin: 50px auto 0 auto;
+    width: 80%;
   }
   display: flex;
   align-items: center;
   justify-content: center;
 
   img {
-    width: 43%;
+    width: 80%;
     height: 100%;
     min-width: 135px;
     max-width: 400px;

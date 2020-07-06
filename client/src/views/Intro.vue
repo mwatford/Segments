@@ -55,7 +55,7 @@ section {
   background: #042640;
   width: 100%;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
   position: relative;
   // background: linear-gradient(111deg, #042640, #084c80, #128be6);
   font-family: "futura-pt", sans-serif;

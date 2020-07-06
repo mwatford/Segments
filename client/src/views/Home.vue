@@ -30,14 +30,14 @@ import navController from "../mixins/navController";
 export default {
   mixins: [navController("home", "intro")],
   components: {
-    "common-header": header,
+    commonHeader: header,
     Intro,
     navbar,
     Info,
     Delivery,
     Products,
     Contact,
-    "app-footer": Footer,
+    appFooter: Footer,
   },
   computed: {
     showNav() {

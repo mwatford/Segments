@@ -56,12 +56,17 @@ export default {
     padding: 60px 0 50px 0;
   }
   @media (max-width: 1000px) {
+    background: none;
     padding: 0 0 10px 0;
   }
   position: relative;
   padding: 0 0 50px 0;
   overflow: hidden;
   font-family: futura-pt, sans-serif;
+  background-image: url("/assets/Repeat Grid 6.svg");
+  background-repeat: no-repeat;
+  background-position: 60% -100%;
+  background-origin: content-box;
 
   header {
     @media (max-width: 1000px) {
