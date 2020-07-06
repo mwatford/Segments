@@ -10,12 +10,9 @@ const asd = (name, displayAfter) => ({
     active() {
       if (!this.positions) return;
 
-      for (let el in this.positions) {
-        if (
-          this.scrollPos >= this.positions[el][0] &&
-          this.scrollPos <= this.positions[el][1]
-        ) {
-          return el;
+      for (let boundry of this.positions) {
+        if (this.scrollPos >= boundry[1]) {
+          return boundry[0];
         }
       }
     },
@@ -29,16 +26,9 @@ const asd = (name, displayAfter) => ({
     },
     getDOMElementsPositions() {
       let arr = Array.from(document.getElementsByName(name)[0].children);
-      arr = arr.filter((el) => el.id !== "");
-
-      const reduced = arr.reduce((acc, current) => {
-        acc[current.id] = [
-          current.offsetTop,
-          current.clientHeight + current.offsetTop - 1,
-        ];
-        return acc;
-      }, {});
-      this.positions = reduced || [];
+      this.positions = arr
+        .filter((el) => el.tagName === "SECTION" && el.id !== "")
+        .map((el) => [el.id, el.offsetTop]).reverse()
     },
   },
   mounted() {
