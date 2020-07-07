@@ -42,6 +42,9 @@ $breakpoints: (
   "lg": (
     max-width: $lg,
   ),
+  "xl": (
+    max-width: $xl,
+  ),
 ) !default;
 
 @mixin respond-to($breakpoint) {
@@ -61,3 +64,4 @@ $breakpoints: (
 }
 
 @import "./text.scss";
+@import "./popup.scss";
