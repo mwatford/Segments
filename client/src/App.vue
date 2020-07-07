@@ -24,7 +24,7 @@ body {
   max-width: 100vw;
 }
 section {
-  z-index: -1;
+  z-index: 0;
 }
 .hide--1500 {
   @media (max-width: 1550px) {
@@ -47,13 +47,11 @@ section {
   display: flex;
   flex-direction: column;
   z-index: 0;
+  font-family: futura-pt, sans-serif;
 
   h1 {
-    @media (max-width: 1400px) {
+    @media (max-width: $xl) {
       font-size: 40px;
-      margin-left: 10vw;
-      margin-right: 10vw;
-      padding: 0;
     }
     @media (max-width: $md) {
       font-size: 34px;
@@ -66,14 +64,26 @@ section {
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 0;
-    padding: 0 var(--gutters-lg);
+  }
+
+  &--padded {
+    h1 {
+      padding: 0 var(--gutters-lg);
+      @media (max-width: $xl) {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        padding: 0;
+      }
+    }
+    p {
+      @media (max-width: $xl) {
+        margin: 0 10vw;
+      }
+      margin: 0 var(--gutters-lg);
+    }
   }
 }
 .paragraph {
-  @media (max-width: 1400px) {
-    font-family: futura-pt, sans-serif;
-    margin: 0 10vw;
-  }
   @media (max-width: $md) {
     font-size: 22px;
     font-weight: 400;
@@ -83,7 +93,6 @@ section {
     line-height: 21px;
     font-size: 16px;
   }
-  margin: 0 var(--gutters-lg);
   max-width: 705px;
   font-family: futura-pt;
   font-size: 28px;
@@ -92,10 +101,10 @@ section {
   font-weight: 400;
 }
 .background-1 {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     padding: 0 8%;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     display: none;
   }
   position: absolute;
@@ -160,11 +169,11 @@ section {
 }
 .mobile {
   display: none;
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     display: flex;
   }
   &--hide {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       display: none;
     }
   }

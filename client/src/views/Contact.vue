@@ -1,6 +1,6 @@
 <template>
   <section id="kontakt" class="col">
-    <header class="header text--blue3">
+    <header class="header header--padded text--blue3">
       <h1>Doradzimy.</h1>
       <h1>Dobierzemy ofertę dostosowaną <br />do Twoich potrzeb.</h1>
       <h1>Skompletujemy zamówienie.</h1>
@@ -51,11 +51,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
+
 #kontakt {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     padding: 60px 0 50px 0;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     background: none;
     padding: 0 0 10px 0;
   }
@@ -69,7 +71,7 @@ export default {
   background-origin: content-box;
 
   header {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       margin: 0;
     }
     font-family: futura-pt, sans-serif;
@@ -82,7 +84,7 @@ a {
   color: #000;
 }
 .content {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     flex-wrap: wrap;
     transform: none;
     padding: 0 10%;
@@ -93,13 +95,13 @@ a {
 }
 
 br {
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     display: none;
   }
 }
 
 .contact {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     margin-bottom: 40px;
     width: 100%;
 
@@ -112,14 +114,14 @@ br {
   width: 50%;
 
   picture {
-    @media (max-width: 500px) {
+    @media (max-width: $xs) {
       width: 50px;
     }
     width: 80px;
   }
 
   &__icon {
-    @media (max-width: 500px) {
+    @media (max-width: $xs) {
       height: 26px;
     }
     margin-left: auto;
@@ -132,7 +134,7 @@ br {
     width: 100%;
 
     h3 {
-      @media (max-width: 750px) {
+      @media (max-width: $sm) {
         font-size: 20px;
       }
       font-weight: 400;

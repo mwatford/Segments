@@ -17,6 +17,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
 .a {
   stroke-dasharray: 4582;
   stroke-dashoffset: -4582;
@@ -29,7 +30,7 @@ export default {};
   animation: animation 3.5s cubic-bezier(0.51, 0.43, 0.19, 0.97) forwards;
 }
 .house {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     position: static;
   }
   @media (max-height: 800px) {

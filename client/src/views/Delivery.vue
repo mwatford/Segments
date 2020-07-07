@@ -1,6 +1,6 @@
 <template>
   <section class="col" id="dostawa" name="dostawa">
-    <header class="header" id="bs">
+    <header class="header header--padded" id="bs">
       <h1>Bądź świadomy.</h1>
       <p class="paragraph">
         Ponoś odpowiedzialność ekologiczną za produkty, które kupujesz. Dzięki
@@ -176,11 +176,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
 #dostawa {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     padding-top: 40px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     padding-top: 0;
   }
   background: #fff;
@@ -191,7 +192,7 @@ export default {
   min-height: 100vh;
 }
 .bkg {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     display: none;
   }
   width: 100%;
@@ -214,7 +215,7 @@ export default {
 }
 
 .animation {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     justify-content: center;
     margin: 0px 10%;
   }
@@ -227,13 +228,13 @@ export default {
   flex-wrap: wrap;
 
   picture {
-    @media (max-width: 1400px) {
+    @media (max-width: $xl) {
       margin: 54px 10% 0 10%;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       margin: 20px auto 10px auto;
     }
-    @media (max-width: 750px) {
+    @media (max-width: $sm) {
       margin: 20px auto;
     }
     margin: 115px 0 0 0;
@@ -242,7 +243,7 @@ export default {
     max-height: 505px;
 
     img {
-      @media (max-width: 1000px) {
+      @media (max-width: $md) {
         width: 60vw;
         box-shadow: none;
       }
@@ -267,21 +268,21 @@ export default {
   }
 }
 .header {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     padding-top: 0;
     margin-top: 0;
   }
   padding-top: 60px;
 }
 .info {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     transform: translateY(-50px);
   }
   align-items: center;
   background: linear-gradient(180deg, #042640, #084c80, #128be6);
 
   header {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       &:nth-of-type(1) {
         margin: 90px auto 47px auto;
       }
@@ -297,7 +298,7 @@ export default {
   @media (max-width: 1550px) {
     flex-direction: column;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     flex-direction: column;
     margin-bottom: 0;
   }
@@ -306,7 +307,7 @@ export default {
   justify-content: center;
 }
 .info-2 {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     justify-content: space-around;
     width: 100%;
     padding: 0 10vw;
@@ -316,7 +317,7 @@ export default {
     flex-direction: column;
     padding: 0 16vw;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     padding: 0 10vw;
   }
   flex-wrap: wrap;
@@ -328,15 +329,15 @@ export default {
   width: 215px;
 }
 .wrap-up {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     height: 90vh;
     max-height: 600px;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     max-height: 500px;
     margin-bottom: 80px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     max-height: 240px;
   }
   color: #fff;
@@ -350,16 +351,16 @@ export default {
   text-align: center;
 
   h1 {
-    @media (max-width: 1400px) {
+    @media (max-width: $xl) {
       font-size: 90px;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       font-size: 54px;
     }
-    @media (max-width: 750px) {
+    @media (max-width: $sm) {
       font-size: 48px;
     }
-    @media (max-width: 500px) {
+    @media (max-width: $xs) {
       font-size: 32px;
     }
     font-size: 113px;

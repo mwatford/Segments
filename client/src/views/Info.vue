@@ -5,7 +5,7 @@
         <img src="/assets/Repeat Grid 4.png" alt="" />
       </picture>
     </div>
-    <header class="header text--white text-md--black">
+    <header class="header text--white text-md--black header--padded">
       <h1 class="text-md--header">
         Chcemy zostawić świat lepszym, niż go zastaliśmy.
       </h1>
@@ -48,18 +48,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
+
 #o_nas {
   @media (min-width: 1920px) {
     height: 950px;
   }
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     padding-top: 50px;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     padding: 37px 0 0 0;
     justify-content: center;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     padding: 0;
   }
   padding: 0 0 20px 0;
@@ -72,10 +74,10 @@ export default {
   @media (min-width: 1920px) {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     padding: 0 10%;
   }
-  @media (max-width: 992px) {
+  @media (max-width: $md) {
     display: none;
   }
   width: 100%;
@@ -95,7 +97,7 @@ export default {
   }
 }
 header {
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     margin-top: 37px;
   }
   margin-top: 60px;
@@ -116,17 +118,17 @@ figure {
   @media (min-width: 1920px) {
     transform: translateY(-270px);
   }
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     transform: none;
     margin: 35px 10% 0 auto;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     position: relative;
     border: none;
     margin: 35px 10%;
     height: auto;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     margin: 23px 10%;
   }
   align-items: center;
@@ -149,7 +151,7 @@ figure {
     position: absolute;
 
     &:nth-child(1) {
-      @media (max-width: 1000px) {
+      @media (max-width: $md) {
         position: static;
         max-width: 430px;
         width: 60vw;
@@ -159,7 +161,7 @@ figure {
       right: 80px;
     }
     &:nth-child(2) {
-      @media (max-width: 1000px) {
+      @media (max-width: $md) {
         position: static;
         max-width: 430px;
         width: 60vw;
@@ -171,7 +173,7 @@ figure {
       left: 55px;
     }
     &:nth-child(3) {
-      @media (max-width: 1000px) {
+      @media (max-width: $md) {
         position: static;
         max-width: 430px;
         width: 60vw;
@@ -184,7 +186,7 @@ figure {
   }
 
   img {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       width: 100%;
       box-shadow: none;
     }
@@ -194,7 +196,7 @@ figure {
   }
 
   figcaption {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       margin: 10px auto 0 auto;
       font-size: 14px;
       line-height: 18px;
@@ -227,7 +229,7 @@ figure {
 }
 .paragraph {
   &:nth-of-type(1) {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       order: 2;
     }
   }

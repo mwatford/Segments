@@ -17,15 +17,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
+
 .product {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     width: 320px;
   }
-  @media (max-width: 750px) {
+  @media (max-width: $sm) {
     max-width: 280px;
     padding: 10px 20px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     margin: 10px auto;
   }
   cursor: pointer;
@@ -38,10 +40,10 @@ export default {
   margin: 20px 15px;
 
   &__image {
-    @media (max-width: 1400px) {
+    @media (max-width: $xl) {
       width: 165px;
     }
-    @media (max-width: 750px) {
+    @media (max-width: $sm) {
       width: 140px;
     }
     width: 100%;
@@ -57,7 +59,7 @@ export default {
   }
 
   &__text {
-    @media (max-width: 750px) {
+    @media (max-width: $sm) {
       justify-content: flex-start;
     }
     width: 100%;
@@ -66,10 +68,10 @@ export default {
     align-items: center;
   }
   h3 {
-    @media (max-width: 1400px) {
+    @media (max-width: $xl) {
       font-size: 20px;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       font-size: 16px;
       line-height: 21px;
     }
@@ -81,10 +83,10 @@ export default {
   }
 
   h4 {
-    @media (max-width: 1400px) {
+    @media (max-width: $xl) {
       font-size: 18px;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       font-size: 16px;
     }
     font-size: 22px;

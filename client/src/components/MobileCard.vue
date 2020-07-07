@@ -27,8 +27,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
 .mobileCard {
-  @media (min-width: 1000px) {
+  @media (min-width: $md) {
     width: 350px;
   }
   color: #fff;

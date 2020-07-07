@@ -26,8 +26,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
+
 footer {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     padding: 5px 10%;
   }
   padding: 10px var(--gutters-lg);

@@ -47,6 +47,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../styles/scss/variables.scss";
+
 @mixin card($type) {
   .card {
     &__border {
@@ -243,7 +245,7 @@ export default {
   user-select: none;
 
   &--large {
-    @media (min-width: 1400px) {
+    @media (min-width: $xl) {
       @include large;
     }
   }

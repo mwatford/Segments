@@ -120,11 +120,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
 * {
   user-select: none;
 }
 .popup {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     flex-direction: column;
     height: auto;
     min-height: 100vh;
@@ -146,7 +147,7 @@ export default {
   color: var(--header);
 }
 section {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     width: 100%;
   }
   width: 50%;
@@ -156,7 +157,7 @@ section {
   position: relative;
 
   &:nth-of-type(1) {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       justify-content: flex-start;
       align-items: flex-start;
     }
@@ -164,7 +165,7 @@ section {
     z-index: 1;
   }
   &:nth-of-type(2) {
-    @media (min-width: 1000px) {
+    @media (min-width: $md) {
       padding-right: 30px;
     }
     z-index: 0;
@@ -173,10 +174,10 @@ section {
   }
 }
 .details {
-  @media (min-width: 1000px) {
+  @media (min-width: $md) {
     margin: 35px auto 35px 0;
   }
-  @media (max-width: 750px) {
+  @media (max-width: $sm) {
     max-width: 270px;
     font-size: 18px;
   }
@@ -197,7 +198,7 @@ section {
   }
 }
 .wrapper {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     border-top-left-radius: 84px;
     border-top-right-radius: 84px;
     background: #095590;
@@ -226,7 +227,7 @@ section {
   }
 
   h3 {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       font-size: 24px;
     }
     font-family: futura-pt, sans-serif;
@@ -237,7 +238,7 @@ section {
   }
   p,
   ul {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       font-size: 15px;
       font-weight: 500;
     }
@@ -248,7 +249,7 @@ section {
     width: 100%;
   }
   .price {
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       font-size: 18px;
       margin-bottom: 20px;
     }
@@ -264,7 +265,7 @@ section {
   }
 }
 .button {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     top: 12px;
     left: 15px;
   }
@@ -273,7 +274,7 @@ section {
   left: 25px;
 }
 .logo {
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     height: 16px;
   }
   height: 20px;
@@ -283,7 +284,7 @@ section {
   z-index: 3;
 }
 picture {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     margin: 50px auto 0 auto;
     width: 80%;
   }
@@ -303,7 +304,7 @@ hr {
   margin: 10px 0;
 }
 a.mobile {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     display: flex;
   }
   height: 48px;

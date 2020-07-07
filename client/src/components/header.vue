@@ -26,15 +26,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
 .commonHeader {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     padding: 0 10%;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     padding: 0 10%;
     font-size: 24px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     font-size: 20px;
   }
   @media (max-width: 359px) {
@@ -50,14 +51,14 @@ export default {
   user-select: none;
 
   &--large {
-    @media (max-width: 1400px) {
+    @media (max-width: $xl) {
       font-size: 40px;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: $md) {
       font-size: 24px;
       padding-top: 0;
     }
-    @media (max-width: 500px) {
+    @media (max-width: $xs) {
       font-size: 20px;
     }
     @media (max-width: 359px) {
