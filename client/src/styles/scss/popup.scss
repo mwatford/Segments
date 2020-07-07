@@ -1,0 +1,36 @@
+.popup {
+  input {
+    height: 48px;
+    border-radius: 3px;
+    border: 1px solid var(--blue);
+    padding: 13px 0 13px 16px;
+    color: var(--blue2);
+    font-size: 16px;
+  }
+  input[type="date"] {
+    width: 200px;
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input[type="tel"] {
+    width: 300px;
+  }
+  input[type="submit"] {
+    cursor: pointer;
+    min-width: 150px;
+    margin-left: 30px;
+    font-size: 20px;
+    color: #fff;
+    background: var(--blue2);
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    border: none;
+    padding: 0 15px;
+
+    &:hover {
+      box-shadow: 0 0 16px var(--blue2);
+    }
+  }
+}
