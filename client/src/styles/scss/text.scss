@@ -20,6 +20,11 @@
   @include colors();
 }
 
+.text-xl {
+  @include respond-to("xl") {
+    @include colors();
+  }
+}
 .text-lg {
   @include respond-to("lg") {
     @include colors();
@@ -43,4 +48,3 @@
     @include colors();
   }
 }
-
