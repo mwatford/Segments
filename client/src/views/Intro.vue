@@ -15,7 +15,7 @@
 <script>
 import house from "../components/house-svg.vue";
 import houseMobile from "../components/house-mobile-svg.vue";
-import navbar from "../components/navbar.vue";
+import navbar from "../components/nav/navbar.vue";
 
 export default {
   components: {
@@ -27,8 +27,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
+
 section {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     padding: 50px 0 30px 0;
     min-height: 600px;
     box-shadow: none;
@@ -42,7 +44,7 @@ section {
       }
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     padding: 24px 0 70px 0;
     min-height: unset;
     height: 410px;
@@ -61,10 +63,10 @@ section {
   font-family: "futura-pt", sans-serif;
 }
 .intro-background {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     height: 100%;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     height: 320px;
   }
   display: flex;
@@ -84,30 +86,30 @@ section {
   }
 }
 header {
-  @media (max-width: 1400px) {
+  @media (max-width: $xl) {
     margin: 8% 10%;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     margin: 20px 10%;
   }
   margin: 120px var(--gutters-lg);
 }
 strong {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     font-size: 53px;
     line-height: 1;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     font-size: 29px;
   }
   font-size: 5vw;
   line-height: 1;
 }
 h1 {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     font-size: 36px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: $xs) {
     font-size: 21px;
   }
   font-size: 3.4vw;
