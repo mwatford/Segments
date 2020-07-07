@@ -17,8 +17,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables.scss";
 .button {
-  @media (max-width: 1000px) {
+  @media (max-width: $md) {
     background: #fff;
     width: auto;
     min-width: 50px;
